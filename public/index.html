@@ -4,38 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLB Schedule</title>
+    <title>CBB-LIVE-OU</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/scripts.js" type="module"></script>
 </head>
 
-<body style="margin: 0; background: #ffffff">
-    <div class="container-center-horizontal">
-        <div class="main screen">
-            <div class="headline">
-                <img class="title-logo" src="img/xr-title-logo@1x.png" alt="xR-Logo" />
-                <div class="date">
-                    <div class="flex-row">
-                        <div class="tab">
-                            <button class="tablinks yesterday" data-tab="yesterday">YESTERDAY</button>
-                            <button class="tablinks today" data-tab="today">TODAY</button>
-                            <button class="tablinks tomorrow" data-tab="tomorrow">TOMORROW</button>
-                        </div>
-                    </div>
-                    <img class="date-divider" src="img/date-divider@1x.png" alt="Date-Divider" />
-                </div>
-                <div class="schedule-wrap">
-                    <div class="arrow" onclick="scrollSchedule('left')">
-                        <img class="left-arrow" src="/img/left-arrow-schedule@1x.png" alt="LeftArrow"/>
-                    </div>
-                    <div id="schedule" class="game-container"></div>
-                    <div class="arrow" onclick="scrollSchedule('right')">
-                        <img class="right-arrow" src="/img/right-arrow-schedule@1x.png" alt="RightArrow"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+    <!-- Inputs -->
+    <div id="cell-1" class="input-head"></div>
+    <!-- Team 1 Selection -->
+    <div id="team1-container">
+        <div id="cell-2" class="tm-head"></div>
+        <!--<div id="cell-3" class="tm-select"></div>-->
+        <select id="team1-select" class="tm-select"></select>
+        <div id="cell-4" class="tm-detail-name"></div>
+        <div id="cell-5" class="tm-detail-stat"></div>
+        <div id="cell-6" class="tm-detail-name"></div>
+        <div id="cell-7" class="tm-detail-stat"></div>
+        <div id="cell-8" class="tm-detail-name"></div>
+        <div id="cell-9" class="tm-detail-stat"></div>
+        <div id="cell-10" class="tm-detail-name"></div>
+        <div id="cell-11" class="tm-detail-stat"></div>
+        <div id="cell-12" class="tm-detail-name"></div>
+        <div id="cell-13" class="tm-detail-stat"></div>
+        <div id="cell-14" class="tm-detail-name"></div>
+        <div id="cell-15" class="tm-detail-stat"></div>
     </div>
+    <!-- Team 2 Selection -->
+    <div id="team2-container">
+        <div id="cell-17" class="tm-head"></div>
+        <!--<div id="cell-18" class="tm-select"></div>-->
+        <select id="team2-select" class="tm-select"></select>
+        <div id="cell-19" class="tm-detail-name"></div>
+        <div id="cell-20" class="tm-detail-stat"></div>
+        <div id="cell-21" class="tm-detail-name"></div>
+        <div id="cell-22" class="tm-detail-stat"></div>
+        <div id="cell-23" class="tm-detail-name"></div>
+        <div id="cell-24" class="tm-detail-stat"></div>
+        <div id="cell-25" class="tm-detail-name"></div>
+        <div id="cell-26" class="tm-detail-stat"></div>
+        <div id="cell-27" class="tm-detail-name"></div>
+        <div id="cell-28" class="tm-detail-stat"></div>
+        <div id="cell-29" class="tm-detail-name"></div>
+        <div id="cell-30" class="tm-detail-stat"></div>
+    </div>
+    <!-- Time Remaining Input -->
+    <div id="time-remaining-container">
+        <div id="cell-32" class="time-head"></div>
+        <!--<div id="cell-33" class="time-select"></div>-->
+        <input type="number" id="time-remaining" class="time-select" min="1" max="40" value="40">
+    </div>
+    <!-- Outputs -->
+    <div id="cell-34" class="output-head"></div>
+    <!-- xPoss -->
+    <div id="cell-35" class="xposs-tot-name"></div>
+    <div id="cell-36" class="xposs-tot-stat"></div>
+    <div id="cell-37" class="xposs-rem-name"></div>
+    <div id="cell-38" class="xposs-rem-stat"></div>
+    <!-- xPts -->
+    <div id="cell-40" class="xpts-tot-name"></div>
+    <div id="cell-41" class="xpts-tot-stat"></div>
+    <div id="cell-42" class="xpts-rem-name"></div>
+    <div id="cell-43" class="xpts-rem-stat"></div>
+    <!-- Scripts -->
+    <script src="/js/app.js" type="module"></script>
 </body>
 
 </html>

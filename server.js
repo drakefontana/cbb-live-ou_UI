@@ -1,54 +1,65 @@
 import express from 'express';
-import fetch from 'node-fetch';
+import { google } from 'googleapis';
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-const scheduleUrl = (startDate, endDate) => `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=${startDate}&endDate=${endDate}`;
-
-const formatDate = (date) => {
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-};
-
+app.use(express.json());
 app.use(express.static('public'));
 
-app.get('/api/schedule', async (req, res) => {
-  const today = new Date();
-  const yesterday = new Date(today);
-  yesterday.setDate(today.getDate() - 1);
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
-
-  const startDate = formatDate(yesterday);
-  const endDate = formatDate(tomorrow);
-
-  const url = scheduleUrl(startDate, endDate);
-
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    const games = data.dates.flatMap((date) => {
-      return date.games.map((game) => ({
-        date: date.date,
-        homeTeam: game.teams.home.team.name,
-        homeTeamId: game.teams.home.team.id,
-        awayTeam: game.teams.away.team.name,
-        awayTeamId: game.teams.away.team.id,
-        gameTime: game.gameDate,
-        startTimeTBD: game.status.startTimeTBD,
-      }));
-    });
-    res.json(games);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error fetching schedule data.');
-  }
+const auth = new google.auth.GoogleAuth({
+    keyFile: path.join(__dirname, './credentials/cbb-live-ou-bb85d1a4646c.json'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
+async function getGoogleSheetsClient() {
+    const client = await auth.getClient();
+    const googleSheets = google.sheets({ version: 'v4', auth: client });
+    return googleSheets;
+}
+
+app.get('/api/teams', async (req, res) => {
+    const googleSheets = await getGoogleSheetsClient();
+    const spreadsheetId = process.env.SPREADSHEET_ID;
+    const range = 'Calc!B2:B363';
+
+    try {
+        const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
+        const teamNames = response.data.values.flat();
+        res.json(teamNames);
+    } catch (error) {
+        console.error('Error fetching team names:', error);
+        res.status(500).send(`Error fetching team names: ${error.message}`);
+    }
+});
+
+app.post('/api/updateTeamSelection', async (req, res) => {
+    const { cellId, teamName } = req.body;
+    const googleSheets = await getGoogleSheetsClient();
+    const spreadsheetId = process.env.SPREADSHEET_ID;
+
+    try {
+        await googleSheets.spreadsheets.values.update({
+            spreadsheetId,
+            range: `Calc!${cellId}`,
+            valueInputOption: 'USER_ENTERED',
+            resource: { values: [[teamName]] },
+        });
+        res.json({ message: 'Team selection updated.' });
+    } catch (error) {
+        console.error('Error updating team selection:', error);
+        res.status(500).send(`Error updating team selection: ${error.message}`);
+    }
+});
 
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+    console.log(`Server listening at http://localhost:${port}`);
 });

@@ -1,17 +1,19 @@
 {
-  "name": "mlb-schedule",
+  "name": "cbb-live-ou",
   "version": "1.0.0",
-  "description": "",
+  "description": "live college basketball over/under app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Drake Fontana",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "express": "^4.17.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.18.2",
+    "googleapis": "^133.0.0",
     "node-fetch": "^2.6.6"
   }
 }

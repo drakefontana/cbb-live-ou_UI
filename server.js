@@ -41,7 +41,7 @@ app.get('/api/teams', async (req, res) => {
     }
 });
 
-app.post('/api/updateTeamSelection', async (req, res) => {
+app.post('/api/updateInputSelection', async (req, res) => {
     const { cellId, teamName } = req.body;
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
@@ -53,10 +53,10 @@ app.post('/api/updateTeamSelection', async (req, res) => {
             valueInputOption: 'USER_ENTERED',
             resource: { values: [[teamName]] },
         });
-        res.json({ message: 'Team selection updated.' });
+        res.json({ message: 'Input selection updated.' });
     } catch (error) {
-        console.error('Error updating team selection:', error);
-        res.status(500).send(`Error updating team selection: ${error.message}`);
+        console.error('Error updating input selection:', error);
+        res.status(500).send(`Error updating input selection: ${error.message}`);
     }
 });
 

@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* screen - desktop */
+
+.main {
+    align-items: flex-end;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 3.87vw;
+    height: 112.5vw;
+    padding: 3.27vw 8.38vw;
+    max-width: 100vw;
+}
+
+.main .headline {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    min-height: 12.7vw;
+    width: 67.23vw;
+}
+
+.main .title-logo {
+    height: 3.75vw;
+    margin-left: 0.16vw;
+    object-fit: cover;
+    width: 2.66vw;
+}
+
+.main .date {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.62vw;
+    margin-left: 0.16vw;
+    margin-top: 1.68vw;
+    min-height: 2.11vw;
+    width: 30.0vw;
+}
+
+.main .flex-row {
+    align-items: flex-end;
+    display: flex;
+    height: 1.48vw;
+    margin-right: 0.1vw;
+    margin-top: -0.16vw;
+    min-width: 25.98vw;
+}
+
+.main .yesterday {
+    letter-spacing: 0;
+    line-height: 1.31vw;
+    margin-bottom: 0.01vw;
+    min-height: 1.17vw;
+    min-width: 5.86vw;
+    white-space: nowrap;
+}
+
+.main .today {
+    letter-spacing: 0;
+    line-height: 1.69vw;
+    margin-left: 5.16vw;
+    min-height: 1.5vw;
+    min-width: 4.02vw;
+    white-space: nowrap;
+}
+
+.main .tomorrow {
+    letter-spacing: 0;
+    line-height: 1.31vw;
+    margin-bottom: 0.01vw;
+    margin-left: 5.08vw;
+    min-height: 1.17vw;
+    min-width: 5.86vw;
+    white-space: nowrap;
+}
+
+.main .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main .tab button {
+    background-color: inherit;
+    float: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.17vw;
+}
+
+.main .tab button:hover {
+    font-size: 1.5vw;
+}
+
+.main .tab button.active {
+    font-size: 1.5vw;
+}
+
+.main .date-divider {
+    height: 0.16vw;
+    object-fit: cover;
+    width: 30.0vw;
+}
+
+.main .schedule-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 5vw;
+}
+
+.main .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.main .arrow:first-child {
+    left: 5vw;
+}
+
+.main .arrow:last-child {
+    right: 5vw;
+}
+
+.main .left-arrow {
+    align-self: center;
+    height: 1.56vw;
+    margin-bottom: 0.42vw;
+    width: 1.29vw;
+}
+
+.main .right-arrow {
+    align-self: center;
+    height: 1.56vw;
+    margin-bottom: 0.42vw;
+    margin-left: 1.64vw;
+    width: 1.29vw;
+}
+
+.main .game-container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.main .game-container {
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: row;
+    justify-content: left;
+    width: 60vw;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    padding-bottom: 20px;
+    /* Add some padding to prevent cutting off cards */
+    box-sizing: border-box;
+    margin: 0 40px;
+}
+
+.main .game-card {
+  align-items: flex-start;
+  background-image: url(/img/game-card-bg@1x.png);
+  background-size: 100% 100%;
+  display: flex;
+  gap: 0.55vw;
+  height: 3.87vw;
+  margin-bottom: 0;
+  margin-left: 1.64vw;
+  min-width: 6.45vw;
+  padding: 0.86vw 0.82vw;
+  justify-content: space-between; /* Add this line to space out the teamContainer and gameTime elements */
+}
+
+.main .team-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main .game-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08vw;
+  min-height: 2.11vw;
+  width: 2.66vw;
+}
+
+.main .game-time {
+  align-self: center;
+  letter-spacing: 0;
+  line-height: 0.84vw;
+  margin-top: 0.0vw;
+  min-height: 0.78vw;
+  min-width: 1.6vw;
+  white-space: nowrap;
+}

@@ -26,10 +26,11 @@ async function getGoogleSheetsClient() {
     return googleSheets;
 }
 
+// Fetch team names for the dropdowns
 app.get('/api/teams', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Calc!B2:B363';
+    const range = 'Calc!B2:B363'; // Assuming teams are listed in these cells
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
@@ -41,6 +42,7 @@ app.get('/api/teams', async (req, res) => {
     }
 });
 
+// Update team selection or time remaining in Google Sheet
 app.post('/api/updateInputSelection', async (req, res) => {
     const { cellId, teamName } = req.body;
     const googleSheets = await getGoogleSheetsClient();
@@ -49,7 +51,7 @@ app.post('/api/updateInputSelection', async (req, res) => {
     try {
         await googleSheets.spreadsheets.values.update({
             spreadsheetId,
-            range: `Calc!${cellId}`,
+            range: `Calc!${cellId}`, // Cell to update, e.g., 'AH3'
             valueInputOption: 'USER_ENTERED',
             resource: { values: [[teamName]] },
         });
@@ -57,6 +59,22 @@ app.post('/api/updateInputSelection', async (req, res) => {
     } catch (error) {
         console.error('Error updating input selection:', error);
         res.status(500).send(`Error updating input selection: ${error.message}`);
+    }
+});
+
+// Fetch static data
+app.get('/api/staticData', async (req, res) => {
+    const googleSheets = await getGoogleSheetsClient();
+    const spreadsheetId = process.env.SPREADSHEET_ID;
+    const range = 'Calc!AH1:AH43'; // Adjust as necessary
+
+    try {
+        const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
+        const staticData = response.data.values;
+        res.json(staticData);
+    } catch (error) {
+        console.error('Error fetching static data:', error);
+        res.status(500).send(`Error fetching static data from Google Sheets: ${error.message}`);
     }
 });
 

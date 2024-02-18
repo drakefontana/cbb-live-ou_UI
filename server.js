@@ -42,41 +42,39 @@ app.get('/api/teams', async (req, res) => {
     }
 });
 
-// Update team selection or time remaining in Google Sheet
-app.post('/api/updateInputSelection', async (req, res) => {
-    console.log(req.body); // Log the entire request body for debugging
-    const { cellId, value } = req.body;
+// Fetch base data from google sheet table
+app.get('/api/baseData', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
-
-    try {
-        await googleSheets.spreadsheets.values.update({
-            spreadsheetId,
-            range: `Calc!${cellId}`, // Cell to update, e.g., 'AH3'
-            valueInputOption: 'USER_ENTERED',
-            resource: { values: [[value]] },
-        });
-        console.log(`Received request to update ${cellId} with value ${value}`);
-        res.json({ message: 'Input selection updated.' });
-    } catch (error) {
-        console.error('Error updating input selection:', error);
-        res.status(500).send(`Error updating input selection: ${error.message}`);
-    }
-});
-
-// Fetch static data
-app.get('/api/staticData', async (req, res) => {
-    const googleSheets = await getGoogleSheetsClient();
-    const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Calc!AH1:AH43'; // Adjust as necessary
+    // Adjust the range to include all teams and relevant columns
+    const range = 'Calc!A2:AH363'; // Example range, adjust according to your sheet
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
-        const staticData = response.data.values;
-        res.json(staticData);
+        const rows = response.data.values;
+        const teamsData = rows.map((row) => {
+            // Map each row to an object with relevant properties
+            return {
+                rank: row[0], // column A
+                team: row[1], // column B
+                conf: row[2], // column C
+                rec: row[3], // column D
+                offRtg: row[5], // column F
+                offRank: row[6], // column G
+                defRtg: row[7], // column H
+                defRank: row[8], // column I
+                possGm: row[9],  // column J
+                possGmRank: row[10],  // column K
+                ptsGm: row[23], // column X
+                fgPer: row[26],  // column AA
+                threePer: row[29] // column AD
+                // Add more properties as needed
+            };
+        });
+        res.json(teamsData);
     } catch (error) {
-        console.error('Error fetching static data:', error);
-        res.status(500).send(`Error fetching static data from Google Sheets: ${error.message}`);
+        console.error('Error fetching base data:', error);
+        res.status(500).send(`Error fetching base data: ${error.message}`);
     }
 });
 

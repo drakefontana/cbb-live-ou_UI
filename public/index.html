@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBB-LIVE-OU</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <!-- Inputs -->
-    <div id="cell-1" class="input-head"></div>
     <!-- Team 1 Selection -->
     <div id="team1-container">
-        <div id="cell-2" class="tm-head"></div>
-        <!--<div id="cell-3" class="tm-select"></div>-->
-        <select id="team1-select" class="tm-select"></select>
-        <div id="cell-4" class="tm-detail-name"></div>
-        <div id="cell-5" class="tm-detail-stat"></div>
-        <div id="cell-6" class="tm-detail-name"></div>
-        <div id="cell-7" class="tm-detail-stat"></div>
-        <div id="cell-8" class="tm-detail-name"></div>
-        <div id="cell-9" class="tm-detail-stat"></div>
-        <div id="cell-10" class="tm-detail-name"></div>
-        <div id="cell-11" class="tm-detail-stat"></div>
-        <div id="cell-12" class="tm-detail-name"></div>
-        <div id="cell-13" class="tm-detail-stat"></div>
-        <div id="cell-14" class="tm-detail-name"></div>
-        <div id="cell-15" class="tm-detail-stat"></div>
+        <div id="team1-head" class="team-head"></div>
+        <select id="team1-select" class="team-select"></select>
+        <div id="team1-rank" class="team-detail"></div>
+        <div id="team1-rec" class="team-detail"></div>
+        <div id="team1-offRank" class="team-detail"></div>
+        <div id="team1-defRank" class="team-detail"></div>
+        <div id="team1-possGm" class="team-detail"></div>
+        <div id="team1-ptsGm" class="team-detail"></div>
+        <div id="team1-fgPer" class="team-detail"></div>
+        <div id="team1-threePer" class="team-detail"></div>
     </div>
+
     <!-- Team 2 Selection -->
     <div id="team2-container">
-        <div id="cell-17" class="tm-head"></div>
-        <!--<div id="cell-18" class="tm-select"></div>-->
-        <select id="team2-select" class="tm-select"></select>
-        <div id="cell-19" class="tm-detail-name"></div>
-        <div id="cell-20" class="tm-detail-stat"></div>
-        <div id="cell-21" class="tm-detail-name"></div>
-        <div id="cell-22" class="tm-detail-stat"></div>
-        <div id="cell-23" class="tm-detail-name"></div>
-        <div id="cell-24" class="tm-detail-stat"></div>
-        <div id="cell-25" class="tm-detail-name"></div>
-        <div id="cell-26" class="tm-detail-stat"></div>
-        <div id="cell-27" class="tm-detail-name"></div>
-        <div id="cell-28" class="tm-detail-stat"></div>
-        <div id="cell-29" class="tm-detail-name"></div>
-        <div id="cell-30" class="tm-detail-stat"></div>
+        <div id="team2-head" class="team-head"></div>
+        <select id="team2-select" class="team-select"></select>
+        <div id="team2-rank" class="team-detail"></div>
+        <div id="team2-rec" class="team-detail"></div>
+        <div id="team2-offRank" class="team-detail"></div>
+        <div id="team2-defRank" class="team-detail"></div>
+        <div id="team2-possGm" class="team-detail"></div>
+        <div id="team2-ptsGm" class="team-detail"></div>
+        <div id="team2-fgPer" class="team-detail"></div>
+        <div id="team2-threePer" class="team-detail"></div>
     </div>
+
     <!-- Time Remaining Input -->
     <div id="time-remaining-container">
-        <div id="cell-32" class="time-head"></div>
-        <!--<div id="cell-33" class="time-select"></div>-->
+        <div id="time-head" class="time-head"></div>
         <select id="time-remaining-select" class="time-select"></select>
     </div>
-    <!-- Outputs -->
-    <div id="cell-34" class="output-head"></div>
-    <!-- xPoss -->
-    <div id="cell-35" class="xposs-tot-name"></div>
-    <div id="cell-36" class="xposs-tot-stat"></div>
-    <div id="cell-37" class="xposs-rem-name"></div>
-    <div id="cell-38" class="xposs-rem-stat"></div>
-    <!-- xPts -->
-    <div id="cell-40" class="xpts-tot-name"></div>
-    <div id="cell-41" class="xpts-tot-stat"></div>
-    <div id="cell-42" class="xpts-rem-name"></div>
-    <div id="cell-43" class="xpts-rem-stat"></div>
+
+    <!-- Output Calculations -->
+    <div id="output-container">
+        <div id="output-gm-total-xposs" class="output-detail"></div>
+        <div id="output-xposs-remaining" class="output-detail"></div>
+        <div id="output-gm-total-xpts" class="output-detail"></div>
+        <div id="output-xpts-remaining" class="output-detail"></div>
+    </div>
+
     <!-- Scripts -->
     <script src="/js/app.js" type="module"></script>
 </body>
-
 </html>

@@ -81,12 +81,14 @@ async function fetchAndDisplayStaticData() {
 function attachEventListeners() {
     // Attach event listeners for dropdown changes
     document.getElementById('team1-select').addEventListener('change', async function() {
-        await updateInputSelection('AH3', this.value);
+        const selectedTeamName = this.value;
+        updateInputSelection('AH3', selectedTeamName);
         await fetchAndDisplayStaticData(); // Re-fetch and display static data after selection
     });
 
     document.getElementById('team2-select').addEventListener('change', async function() {
-        await updateInputSelection('AH18', this.value);
+        const selectedTeamName = this.value;
+        updateInputSelection('AH18', selectedTeamName);
         await fetchAndDisplayStaticData(); // Re-fetch and display static data after selection
     });
 

@@ -44,7 +44,8 @@ app.get('/api/teams', async (req, res) => {
 
 // Update team selection or time remaining in Google Sheet
 app.post('/api/updateInputSelection', async (req, res) => {
-    const { cellId, teamName } = req.body;
+    console.log(req.body); // Log the entire request body for debugging
+    const { cellId, value } = req.body;
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
 
@@ -53,8 +54,9 @@ app.post('/api/updateInputSelection', async (req, res) => {
             spreadsheetId,
             range: `Calc!${cellId}`, // Cell to update, e.g., 'AH3'
             valueInputOption: 'USER_ENTERED',
-            resource: { values: [[teamName]] },
+            resource: { values: [[value]] },
         });
+        console.log(`Received request to update ${cellId} with value ${value}`);
         res.json({ message: 'Input selection updated.' });
     } catch (error) {
         console.error('Error updating input selection:', error);

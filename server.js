@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 const auth = new google.auth.GoogleAuth({
-    keyFile: path.join(__dirname, '/home1/peh4rd4t/cbb/credentials/cbb-live-ou-bb85d1a4646c.json'),
+    keyFile: path.join(__dirname, './credentials/cbb-live-ou-bb85d1a4646c.json'),
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 

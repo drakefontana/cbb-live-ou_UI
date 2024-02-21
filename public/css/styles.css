@@ -176,15 +176,15 @@ html,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
-.team-head, .time-head {
+.team-head, .time-head, .score-head {
     display: flex;
     justify-content: center;
 }
 
-#team1-detail-cont, #team2-detail-cont, #output-detail-cont {
+#team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -199,7 +199,7 @@ html,
     align-items: center;
 }
 
-#output-detail-cont span {
+#output-detail-cont span, #pace-output-detail-cont span {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -207,9 +207,10 @@ html,
     align-items: center;
 }
 
-#team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3 {
+#team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
     margin-top: 2vh;
     margin-bottom: .5vh;
+    text-align: center;
 }
 
 #team2-container {
@@ -217,7 +218,7 @@ html,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
 #time-remaining-container {
@@ -225,14 +226,36 @@ html,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
-#output-container {
+#scoreboard-display {
+    display: flex;
+    flex-direction: row;
+}
+
+#scoreboard-display span {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+#output-pace-flag {
+    margin-top: 2vh;
+    font-size: 1.125em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+#output-container, #pace-output-container {
     width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 3vh;
 }
 
 .h2 {
@@ -256,6 +279,14 @@ html,
 
 .time-select {
     font-size: 3em;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    padding: 1.5vh;
+}
+
+.team-score {
+    font-size: 1.5em;
     font-weight: 700;
     font-style: italic;
     text-align: center;

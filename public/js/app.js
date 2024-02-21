@@ -76,6 +76,10 @@ function performCalculations() {
     const team2Name = document.getElementById('team2-select').value;
     const timeRemaining = parseInt(document.getElementById('time-remaining-select').value, 10);
 
+    // Retrieve current scores from input fields
+    const currentScoreTeam1 = parseInt(document.getElementById('current-score-team1').value, 10);
+    const currentScoreTeam2 = parseInt(document.getElementById('current-score-team2').value, 10);
+
     const team1Data = baseData.find(team => team.team === team1Name);
     const team2Data = baseData.find(team => team.team === team2Name);
 
@@ -87,16 +91,41 @@ function performCalculations() {
     const ptsPoss1 = parseFloat(team1Data.ptsGm) / parseFloat(team1Data.possGm);
     const ptsPoss2 = parseFloat(team2Data.ptsGm) / parseFloat(team2Data.possGm);
 
+    // Ranking adjustment calculations integrated here
+    const rankAdjustment1 = 1 + ((team2Data.defRank - team1Data.offRank) / 1000); // Simplified example
+    const rankAdjustment2 = 1 + ((team1Data.defRank - team2Data.offRank) / 1000);
+
+    const adjustedPtsPoss1 = ptsPoss1 * rankAdjustment1;
+    const adjustedPtsPoss2 = ptsPoss2 * rankAdjustment2;
+
     // Calculate combined game points per possession
-    const combPtsPoss = (ptsPoss1 + ptsPoss2) / 2;
+    const combPtsPoss = (adjustedPtsPoss1 + adjustedPtsPoss2) / 2;
 
     // Calculate game total xPoss
-    const gmTotalxPoss = parseFloat(team1Data.possGm) + parseFloat(team2Data.possGm);
+    // Calculate pace adjustment factor based on offensive and defensive rankings
+    const paceAdjustmentFactor1 = 1 + ((Math.abs(team1Data.offRank - team2Data.defRank) / 362)*.125);
+    const paceAdjustmentFactor2 = 1 + ((Math.abs(team2Data.offRank - team1Data.defRank) / 362)*.125);
+    
+    // Determine the team with the advantage
+    const team1Advantage = (team1Data.offRank - team2Data.defRank) - (team2Data.offRank - team1Data.defRank);
+    const team2Advantage = -team1Advantage; // Opposite of team1's advantage
+    
+    // Adjust gmTotalxPoss based on which team has the pacing advantage
+    let gmTotalxPoss;
+    if (team1Advantage > team2Advantage) {
+        gmTotalxPoss = (parseFloat(team1Data.possGm) * paceAdjustmentFactor1) + parseFloat(team2Data.possGm);
+    } else if (team2Advantage > team1Advantage) {
+        gmTotalxPoss = (parseFloat(team2Data.possGm) * paceAdjustmentFactor2) + parseFloat(team1Data.possGm);
+    } else {
+        // If neither team has a clear advantage, default to their average paces
+        gmTotalxPoss = parseFloat(team1Data.possGm) + parseFloat(team2Data.possGm);
+    }
 
     // Calculate game total xPts
-    const gmTotalxPts1 = combPtsPoss * gmTotalxPoss;
-    const gmTotalxPts2 = parseFloat(team1Data.ptsGm) + parseFloat(team2Data.ptsGm);
-    const gmTotalxPts = (gmTotalxPts1 + gmTotalxPts2) / 2;
+    const gmTotalxPts = combPtsPoss * gmTotalxPoss;
+    // Flattening back to average
+    // const gmTotalxPts2 = parseFloat(team1Data.ptsGm) + parseFloat(team2Data.ptsGm);
+    // const gmTotalxPts = (gmTotalxPts1 + gmTotalxPts2) / 2;
 
     // Calculate xPts/Min and xPts Remaining based on Points per Game
     const xPtsMin = gmTotalxPts / 40;
@@ -112,11 +141,27 @@ function performCalculations() {
     // Calculate xPts Remaining Official
     const xPtsRemaining = (xPtsRemaining1 + xPtsRemaining2) / 2;
 
+    // Adjusted xPts Remaining calculation
+    const currentTotalScore = currentScoreTeam1 + currentScoreTeam2;
+    const timePlayed = 40 - timeRemaining; // Assuming a standard game length of 40 minutes
+    const pacePtsMin = currentTotalScore / timePlayed; // Points per minute played
+    const paceAdjGmTotalxPts = pacePtsMin * 40; // Projected total score at current pace
+    const paceAdjxPtsRemaining = pacePtsMin * timeRemaining; 
+
+    let paceFlag = "On Pace";
+    if (paceAdjGmTotalxPts < gmTotalxPts * 0.94) paceFlag = "Very Slow";
+    else if (paceAdjGmTotalxPts < gmTotalxPts * 0.97) paceFlag = "Slow";
+    else if (paceAdjGmTotalxPts > gmTotalxPts * 1.03) paceFlag = "Fast";
+    else if (paceAdjGmTotalxPts > gmTotalxPts * 1.06) paceFlag = "Very Fast";
+
     // Update the UI with calculated values
     document.getElementById('output-gm-total-xposs').textContent = gmTotalxPoss.toFixed(2);
     document.getElementById('output-xposs-remaining').textContent = xPossRemaining.toFixed(2);
     document.getElementById('output-gm-total-xpts').textContent = gmTotalxPts.toFixed(2);
     document.getElementById('output-xpts-remaining').textContent = xPtsRemaining.toFixed(2);
+    document.getElementById('output-pace-flag').textContent = paceFlag;
+    document.getElementById('output-pace-adj-gm-total-xpts').textContent = paceAdjGmTotalxPts.toFixed(2);
+    document.getElementById('output-pace-adj-xpts-remaining').textContent = paceAdjxPtsRemaining.toFixed(2);
 
     // Update static data UI for both teams
     updateStaticDataUI(team1Data); // You might need to separate UI elements for team 1 and team 2
@@ -144,6 +189,8 @@ function attachEventListeners() {
     document.getElementById('team1-select').addEventListener('change', updateStaticAndOutputValues);
     document.getElementById('team2-select').addEventListener('change', updateStaticAndOutputValues);
     document.getElementById('time-remaining-select').addEventListener('change', updateStaticAndOutputValues);
+    document.getElementById('current-score-team1').addEventListener('change', updateStaticAndOutputValues);
+    document.getElementById('current-score-team2').addEventListener('change', updateStaticAndOutputValues);
 }
 
 // Main initialization function

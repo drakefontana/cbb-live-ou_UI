@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!-- Preload Fonts -->
-    <link rel="preload" href="/font/Montserrat Webfont/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/Montserrat Webfont/Montserrat-SemiBold.woff2" as="font" type="font/woff2"
+        crossorigin>
     <link rel="preload" href="/font/Montserrat Webfont/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/font/Montserrat Webfont/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/Montserrat Webfont/Montserrat-ExtraBold.woff2" as="font" type="font/woff2"
+        crossorigin>
     <!-- SEO meta tags -->
     <meta name="description" content="Drake Fontana presents a live college basketball betting tool">
     <meta name="keywords" content="Live Betting Tool, College Basketball, Over/Under">
@@ -33,7 +36,7 @@
     <meta itemprop="description" content="Drake Fontana presents a live college basketball betting tool">
     <meta itemprop="image" content="/img/Html-Head-Img/cbb-df-Google-Thumb.jpg">
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/styles.css" />
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js" defer></script>
     <!-- Preconnect to required origins -->
@@ -65,6 +68,7 @@
     <meta name="theme-color" content="#FF8747">
     <title>College Basketball Live Over/Under Calculator</title>
 </head>
+
 <body>
     <div id="main-content">
         <!-- Team 1 Selection -->
@@ -163,20 +167,55 @@
         <div id="output-container">
             <div id="output-detail-cont">
                 <span>
-                    <h3>GM TOTAL xPOSS</h3>
+                    <h3>PRE-GAME</br>TOTAL xPOSS</h3>
                     <div id="output-gm-total-xposs" class="output-detail"></div>
                 </span>
                 <span>
-                    <h3>xPOSS REMAINING</h3>
+                    <h3>xPOSS</br>REMAINING</h3>
                     <div id="output-xposs-remaining" class="output-detail"></div>
                 </span>
                 <span>
-                    <h3>GM TOTAL xPTS</h3>
+                    <h3>PRE-GAME</br>TOTAL xPTS</h3>
                     <div id="output-gm-total-xpts" class="output-detail"></div>
                 </span>
                 <span>
-                    <h3>xPTS REMAINING</h3>
+                    <h3>xPTS</br>REMAINING</h3>
                     <div id="output-xpts-remaining" class="output-detail"></div>
+                </span>
+            </div>
+        </div>
+
+        <!-- Current Score Input -->
+        <div id="current-scores-container">
+            <div id="score-head" class="score-head">
+                <h2>CURRENT SCORE</h2>
+            </div>
+            <div id="scoreboard-display">
+                <span>
+                    <h3>TEAM 1</h3>
+                    <input type="number" id="current-score-team1" class="team-score" placeholder="Team 1 Score" value="0" />
+                </span>
+                <span id="pace-description-container">
+                    <h3>PACE</h3>
+                    <span id="output-pace-flag"></span>
+                </span>
+                <span>
+                    <h3>TEAM 2</h3>
+                    <input type="number" id="current-score-team2" class="team-score" placeholder="Team 2 Score" value="0" />
+                </span>
+            </div>
+        </div>
+
+        <!-- Pace Adjusted Outputs -->
+        <div id="pace-output-container">
+            <div id="pace-output-detail-cont">
+                <span>
+                    <h3>PACE ADJUSTED</br>GM TOTAL xPTS</h3>
+                    <div id="output-pace-adj-gm-total-xpts" class="output-detail"></div>
+                </span>
+                <span>
+                    <h3>PACE ADJUSTED</br>xPTS REMAINING</h3>
+                    <div id="output-pace-adj-xpts-remaining" class="output-detail"></div>
                 </span>
             </div>
         </div>
@@ -186,4 +225,5 @@
     <script src="/js/app.js" type="module"></script>
     </div>
 </body>
+
 </html>

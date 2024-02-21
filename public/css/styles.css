@@ -263,6 +263,12 @@ html,
     margin-bottom: 3vh;
 }
 
+#team1-score-head, #team2-score-head {
+    font-size: 1.25em;
+    font-weight: 700;
+    font-style: italic;
+}
+
 /* Pace */
 #output-pace-flag {
     margin-top: 2vh;

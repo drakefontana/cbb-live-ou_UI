@@ -66,6 +66,10 @@ function updateStaticAndOutputValues() {
     updateStaticDataUI(team1StaticData, 'team1'); // 'team1' is a placeholder class or ID prefix
     updateStaticDataUI(team2StaticData, 'team2'); // 'team2' is a placeholder class or ID prefix
     
+    // Update score headers with team names
+    document.getElementById('team1-score-head').textContent = team1Name;
+    document.getElementById('team2-score-head').textContent = team2Name;
+
     // Perform and display calculations
     performCalculations(team1Name, team2Name);
 }

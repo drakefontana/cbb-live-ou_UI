@@ -95,9 +95,9 @@ function performCalculations() {
     const ptsPoss1 = parseFloat(team1Data.ptsGm) / parseFloat(team1Data.possGm);
     const ptsPoss2 = parseFloat(team2Data.ptsGm) / parseFloat(team2Data.possGm);
 
-    // Ranking adjustment calculations integrated here
-    const rankAdjustment1 = 1 + ((team2Data.defRank - team1Data.offRank) / 1000); // Simplified example
-    const rankAdjustment2 = 1 + ((team1Data.defRank - team2Data.offRank) / 1000);
+    // Dynamically calculating rank adjustments based on offensive and defensive strengths
+const rankAdjustment1 = (team1Data.offRank < team2Data.defRank) ? (1 + Math.abs(team2Data.defRank - team1Data.offRank) / 1000) : (1 - Math.abs(team2Data.defRank - team1Data.offRank) / 1000);
+const rankAdjustment2 = (team2Data.offRank < team1Data.defRank) ? (1 + Math.abs(team1Data.defRank - team2Data.offRank) / 1000) : (1 - Math.abs(team1Data.defRank - team2Data.offRank) / 1000);
 
     const adjustedPtsPoss1 = ptsPoss1 * rankAdjustment1;
     const adjustedPtsPoss2 = ptsPoss2 * rankAdjustment2;

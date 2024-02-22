@@ -221,21 +221,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    width: 100vw;    
 }
 
 /* Headings */
 .team-head, .time-head, .score-head {
+    width: 100%;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
-.h2 {
-    font-size: 1em;
+h2 {
+    font-size: 1.5em;
     font-weight: 900;
     font-style: normal;
 }
 
-.h3 {
+h3 {
     font-weight: 400;
     font-style: normal;
 }
@@ -247,13 +251,13 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0vh;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 /* Stat Details */
 #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
-    width: 67vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -269,12 +273,23 @@ body {
 }
 
 /* Span Styling */
-#team1-detail-cont span, #team2-detail-cont span, #output-detail-cont span, #pace-output-detail-cont span {
+#team1-detail-cont span, #team2-detail-cont span, #output-detail-cont span {
     width: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#pace-output-detail-cont span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pace-output-detail-full, .pace-output-detail-empty {
+    width: 25%;
 }
 
 /* Headings within Spans */
@@ -287,11 +302,12 @@ body {
 
 /* Time Remaining & Scoreboard */
 #time-remaining-container {
-    width: 25vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0vh;
+    align-items: center;
 }
 
 #current-scores-container {
@@ -300,7 +316,7 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0vh;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -327,7 +343,14 @@ body {
 }
 
 /* Pace */
+#pace-description-container h3 {
+    font-size: 1.25em;
+    font-weight: 700;
+    font-style: normal;
+}
+
 #output-pace-flag {
+    width: 100%;
     padding-top: 3vh;
     font-size: 1.125em;
     font-weight: 600;
@@ -335,12 +358,12 @@ body {
 }
 
 #output-container, #pace-output-container {
-    width: 67vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0vh;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -350,6 +373,7 @@ body {
 
 /* Inputs & Selectors */
 .team-select {
+    width: 100%;
     border: .25vw solid var(--black);
     border-radius: .5vw;
     color: var(--black);
@@ -363,6 +387,7 @@ body {
 }
 
 .time-select {
+    width: 25%;
     border: .25vw solid var(--white);
     border-radius: .5vw;
     color: var(--white);
@@ -382,6 +407,7 @@ body {
 }
 
 .team-score {
+    width: 100%;
     border: .25vw solid var(--white);
     border-radius: .5vw;
     color: var(--white);
@@ -392,4 +418,179 @@ body {
     font-style: italic;
     text-align: center;
     padding: 1.5vh;
+}
+
+/* Mobile Devices (Small Screens) */
+@media (max-width: 320px) {
+    /* Styles for mobile devices */
+    h2 {
+        font-size: 1.125em;
+    }
+
+    #team1-container, #team2-container, #output-container, #pace-output-container {
+        margin-bottom: 1vh;
+    }
+
+    .team-select {
+        border: 1.5vw solid var(--black);
+        border-radius: 4.5vw;
+        font-size: 1.0675em;
+    }
+
+    .time-select {
+        width: 50%;
+        border: 1.5vw solid var(--white);
+        border-radius: 5.5vw;
+        font-size: 2.5em;
+    }
+    
+    #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
+        font-size: .5em;
+    }
+
+    .team-detail, .output-detail {
+        font-size: 1em;
+        margin-top: .5vh;
+        margin-bottom: .75vh;
+    }
+
+    #team1-score-head, #team2-score-head {
+        font-size: 1em;
+        margin-bottom: 1vh;
+    }
+
+    #pace-description-container h3 {
+        font-size: 1.05em;
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+    }
+
+    #scoreboard-display {
+        width: 80vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scoreboard-display span {
+        width: 67%;
+    }
+
+    .team-score {
+        border: 1.05vw solid var(--white);
+        border-radius: 3.5vw;
+        font-size: 2.33em;
+    }
+
+    #output-pace-flag {
+        padding-top: 0vh;
+        padding-bottom: 2vh;
+    }
+
+    .pace-output-detail-empty {
+        width: 0vw;
+    }
+
+    .pace-output-detail-full {
+        width: 50%;
+    }
+}
+
+/* Mobile Devices (Large Screens) */
+@media (min-width: 321px) and (max-width: 425px) {
+    /* Styles for tablets in portrait orientation */
+    h2 {
+        font-size: 1.15em;
+    }
+
+    #team1-container, #team2-container, #output-container, #pace-output-container {
+        margin-bottom: 2vh;
+    }
+
+    .team-select {
+        border: 1.05vw solid var(--black);
+        border-radius: 3.5vw;
+        font-size: 1.25em;
+    }
+
+    .time-select {
+        width: 50%;
+        border: 1.05vw solid var(--white);
+        border-radius: 3.5vw;
+        font-size: 2.33em;
+    }
+
+    #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
+        font-size: .65em;
+    }
+
+    .team-detail, .output-detail {
+        font-size: 1.125em;
+        margin-top: .5vh;
+        margin-bottom: .75vh;
+    }
+
+    #team1-score-head, #team2-score-head {
+        font-size: 1.05em;
+        margin-bottom: 1vh;
+    }
+
+    #pace-description-container h3 {
+        font-size: 1.05em;
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+    }
+
+    #scoreboard-display {
+        width: 80vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scoreboard-display span {
+        width: 67%;
+    }
+
+    .team-score {
+        border: 1.05vw solid var(--white);
+        border-radius: 3.5vw;
+        font-size: 2.33em;
+    }
+
+    #output-pace-flag {
+        padding-top: 0vh;
+        padding-bottom: 2vh;
+    }
+
+    .pace-output-detail-empty {
+        width: 0vw;
+    }
+
+    .pace-output-detail-full {
+        width: 50%;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (min-width: 425px) and (max-width: 768px) {
+    /* Styles for tablets in portrait orientation */
+}
+
+/* Tablets (Landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablets in landscape orientation and small desktop screens */
+}
+
+/* Small Desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Styles for tablets in landscape orientation and small desktop screens */
+}
+
+/* Large Desktops */
+@media (min-width: 1441px) and (max-width: 2560px) {
+    /* Default Code */
+}
+
+/* Large Displays */
+@media (min-width: 2561px) {
+    /* Styles for large desktop screens */
 }

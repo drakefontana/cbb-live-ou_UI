@@ -1,3 +1,10 @@
+:root {
+    /* Color Definitions */
+    --black: #131314;
+    --white: #F4F6F3;
+    --alert-red: #EF182B;
+}
+
 /* Font-Face */
 @font-face {
     font-family: "Mont";
@@ -161,6 +168,44 @@
     font-display: fallback;
 }
 
+@font-face {
+    font-family: 'Technology';
+    src: url('../font/technology-digital-clock-webfont/Technology-BoldItalic.woff2') format('woff2'),
+        url('../font/technology-digital-clock-webfont/Technology-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Technology';
+    src: url('../font/technology-digital-clock-webfont/Technology-Bold.woff2') format('woff2'),
+        url('../font/technology-digital-clock-webfont/Technology-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Technology';
+    src: url('../font/technology-digital-clock-webfont/Technology-Regular.woff2') format('woff2'),
+        url('../font/technology-digital-clock-webfont/Technology-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Technology';
+    src: url('../font/technology-digital-clock-webfont/Technology-Italic.woff2') format('woff2'),
+        url('../font/technology-digital-clock-webfont/Technology-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+
+
 /* Reset & Defaults */
 html,
 * {
@@ -172,6 +217,7 @@ html,
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--white);
 }
 
 /* Headings */
@@ -197,11 +243,14 @@ html,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3vh;
+    margin-bottom: 0vh;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 /* Stat Details */
 #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+    width: 67vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -209,7 +258,7 @@ html,
 }
 
 .team-detail, .output-detail {
-    font-size: 1.33em;
+    font-size: 1.75em;
     font-weight: 600;
     font-style: italic;
     margin-top: 1vh;
@@ -217,16 +266,8 @@ html,
 }
 
 /* Span Styling */
-#team1-detail-cont span, #team2-detail-cont span {
+#team1-detail-cont span, #team2-detail-cont span, #output-detail-cont span, #pace-output-detail-cont span {
     width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#output-detail-cont span, #pace-output-detail-cont span {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -235,6 +276,7 @@ html,
 
 /* Headings within Spans */
 #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
+    font-size: .75em;
     margin-top: 2vh;
     margin-bottom: .5vh;
     text-align: center;
@@ -242,25 +284,37 @@ html,
 
 /* Time Remaining & Scoreboard */
 #time-remaining-container {
-    width: 40vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3vh;
+    margin-bottom: 0vh;
+}
+
+#current-scores-container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0vh;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 #scoreboard-display {
+    width: 67vw;
     display: flex;
     flex-direction: row;
 }
 
 #scoreboard-display span {
-    width: 25vw;
+    width: 33%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-    margin-bottom: 3vh;
+    margin-bottom: 0vh;
+    align-items: center;
 }
 
 #team1-score-head, #team2-score-head {
@@ -271,40 +325,67 @@ html,
 
 /* Pace */
 #output-pace-flag {
-    margin-top: 2vh;
+    padding-top: 3vh;
     font-size: 1.125em;
     font-weight: 600;
     font-style: italic;
 }
 
 #output-container, #pace-output-container {
-    width: 80vw;
+    width: 67vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3vh;
+    margin-bottom: 0vh;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#pace-output-detail-cont {
+    margin-top: 1.5vh;
 }
 
 /* Inputs & Selectors */
 .team-select {
+    border: .25vw solid var(--black);
+    border-radius: .5vw;
+    color: var(--black);
+    background-color: var(--white);
     font-size: 2em;
     font-weight: 700;
     font-style: italic;
     text-align: center;
     padding: 1.5vh;
+    margin-bottom: 0vh;
 }
 
 .time-select {
-    font-size: 3em;
-    font-weight: 700;
+    border: .25vw solid var(--white);
+    border-radius: .5vw;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: 'Technology';
+    font-size: 5em;
+    font-weight: bold;
     font-style: italic;
     text-align: center;
     padding: 1.5vh;
 }
 
+.time-select option {
+    font-family: 'Technology';
+    font-weight: bold;
+    font-style: italic;
+}
+
 .team-score {
-    font-size: 1.5em;
-    font-weight: 700;
+    border: .25vw solid var(--white);
+    border-radius: .5vw;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: 'Technology';
+    font-size: 3em;
+    font-weight: normal;
     font-style: italic;
     text-align: center;
     padding: 1.5vh;

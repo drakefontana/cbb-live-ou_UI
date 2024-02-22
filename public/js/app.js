@@ -39,8 +39,23 @@ function populateTimeRemainingDropdown() {
     const timeRemainingSelect = document.getElementById('time-remaining-select');
     for (let i = 1; i <= 40; i++) {
         const option = new Option(i.toString(), i);
+        // Change color of options 1-4 to red immediately upon population
+        if (i >= 1 && i <= 4) {
+            option.style.color = "var(--alert-red)";
+        } else {
+            option.style.color = "var(--white)";
+        }
         timeRemainingSelect.appendChild(option);
     }
+
+    // Event listener to change selected value color
+    timeRemainingSelect.addEventListener('change', function() {
+        if (this.value >= 1 && this.value <= 4) {
+            this.style.color = "var(--alert-red)";
+        } else {
+            this.style.color = "var(--white)"; // Adjust the fallback color as needed
+        }
+    });
 }
 
 // Function to set default dropdown values and trigger static data update

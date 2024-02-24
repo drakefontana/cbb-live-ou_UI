@@ -111,8 +111,13 @@ function performCalculations() {
     const ptsPoss2 = parseFloat(team2Data.ptsGm) / parseFloat(team2Data.possGm);
 
     // Dynamically calculating rank adjustments based on offensive and defensive strengths
-    const rankAdjustment1 = (team1Data.offRank < team2Data.defRank) ? (1 + Math.abs(team2Data.defRank - team1Data.offRank) / 1000) : (1 - Math.abs(team2Data.defRank - team1Data.offRank) / 1000);
-    const rankAdjustment2 = (team2Data.offRank < team1Data.defRank) ? (1 + Math.abs(team1Data.defRank - team2Data.offRank) / 1000) : (1 - Math.abs(team1Data.defRank - team2Data.offRank) / 1000);
+    const rankAdjustment1 = (team1Data.offRank < team2Data.defRank) ?
+        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125:
+        1 - ((team1Data.offRank - team2Data.defRank) / 362) * 0.125;
+
+    const rankAdjustment2 = (team2Data.offRank < team1Data.defRank) ?
+        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125:
+        1 - ((team2Data.offRank - team1Data.defRank) / 362) * 0.125;
 
     const adjustedPtsPoss1 = ptsPoss1 * rankAdjustment1;
     const adjustedPtsPoss2 = ptsPoss2 * rankAdjustment2;
@@ -121,24 +126,16 @@ function performCalculations() {
     const combPtsPoss = (adjustedPtsPoss1 + adjustedPtsPoss2) / 2;
 
     // Calculate game total xPoss
-    // Calculate pace adjustment factor based on offensive and defensive rankings
-    const paceAdjustmentFactor1 = 1 + ((Math.abs(team1Data.offRank - team2Data.defRank) / 362)*.125);
-    const paceAdjustmentFactor2 = 1 + ((Math.abs(team2Data.offRank - team1Data.defRank) / 362)*.125);
-    
-    // Determine the team with the advantage
-    const team1Advantage = (team1Data.offRank - team2Data.defRank) - (team2Data.offRank - team1Data.defRank);
-    const team2Advantage = -team1Advantage; // Opposite of team1's advantage
-    
-    // Adjust gmTotalxPoss based on which team has the pacing advantage
-    let gmTotalxPoss;
-    if (team1Advantage > team2Advantage) {
-        gmTotalxPoss = (parseFloat(team1Data.possGm) * paceAdjustmentFactor1) + parseFloat(team2Data.possGm);
-    } else if (team2Advantage > team1Advantage) {
-        gmTotalxPoss = (parseFloat(team2Data.possGm) * paceAdjustmentFactor2) + parseFloat(team1Data.possGm);
-    } else {
-        // If neither team has a clear advantage, default to their average paces
-        gmTotalxPoss = parseFloat(team1Data.possGm) + parseFloat(team2Data.possGm);
-    }
+    // Calculate pace adjustment factors based on offensive and defensive strengths
+    const paceAdjustmentFactor1 = (team1Data.offRank < team2Data.defRank) ?
+        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125:
+        1 - ((team1Data.offRank - team2Data.defRank) / 362) * 0.125;
+
+    const paceAdjustmentFactor2 = (team2Data.offRank < team1Data.defRank) ?
+        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125:
+        1 - ((team2Data.offRank - team1Data.defRank) / 362) * 0.125;
+
+    const gmTotalxPoss = (parseFloat(team1Data.possGm) * paceAdjustmentFactor1) + (parseFloat(team2Data.possGm) * paceAdjustmentFactor2);
 
     // Calculate game total xPts
     const gmTotalxPts = combPtsPoss * gmTotalxPoss;

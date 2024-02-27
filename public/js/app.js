@@ -62,7 +62,7 @@ function populateTimeRemainingDropdown() {
 function setDefaultDropdownValues() {
     document.getElementById('team1-select').value = 'Colorado St';
     document.getElementById('team2-select').value = 'Colorado';
-    document.getElementById('time-remaining-select').value = 10;
+    document.getElementById('time-remaining-select').value = 20;
     
     // Trigger updates based on default selections
     updateStaticAndOutputValues();
@@ -106,9 +106,16 @@ function performCalculations() {
 
     console.log(`Calculating with team1: ${team1Name}, team2: ${team2Name}, timeRemaining: ${timeRemaining}`);
 
+    // Calculate Adjusted Base PPG
+    // Calculating Base PPG for team 1 against team 2 defense
+    const basePtsGm1 = (parseFloat(team1Data.ptsGm) + parseFloat(team2Data.ptsOppGm)) / 2;
+
+    // Calculating Base PPG for team 2 against team 1 defense
+    const basePtsGm2 = (parseFloat(team2Data.ptsGm) + parseFloat(team1Data.ptsOppGm)) / 2;
+
     // Calculate points per possession for each team
-    const ptsPoss1 = parseFloat(team1Data.ptsGm) / parseFloat(team1Data.possGm);
-    const ptsPoss2 = parseFloat(team2Data.ptsGm) / parseFloat(team2Data.possGm);
+    const ptsPoss1 = basePtsGm1 / parseFloat(team1Data.possGm);
+    const ptsPoss2 = basePtsGm2 / parseFloat(team2Data.possGm);
 
     // Dynamically calculating rank adjustments based on offensive and defensive strengths
     const rankAdjustment1 = (team1Data.offRank < team2Data.defRank) ?
@@ -171,13 +178,13 @@ function performCalculations() {
     else if (paceAdjGmTotalxPts > gmTotalxPts * 1.06) paceFlag = "Very Fast";
 
     // Update the UI with calculated values
-    document.getElementById('output-gm-total-xposs').textContent = gmTotalxPoss.toFixed(2);
-    document.getElementById('output-xposs-remaining').textContent = xPossRemaining.toFixed(2);
-    document.getElementById('output-gm-total-xpts').textContent = gmTotalxPts.toFixed(2);
-    document.getElementById('output-xpts-remaining').textContent = xPtsRemaining.toFixed(2);
+    document.getElementById('output-gm-total-xposs').textContent = gmTotalxPoss.toFixed(1);
+    document.getElementById('output-xposs-remaining').textContent = xPossRemaining.toFixed(1);
+    document.getElementById('output-gm-total-xpts').textContent = gmTotalxPts.toFixed(1);
+    document.getElementById('output-xpts-remaining').textContent = xPtsRemaining.toFixed(1);
     document.getElementById('output-pace-flag').textContent = paceFlag;
-    document.getElementById('output-pace-adj-gm-total-xpts').textContent = paceAdjGmTotalxPts.toFixed(2);
-    document.getElementById('output-pace-adj-xpts-remaining').textContent = paceAdjxPtsRemaining.toFixed(2);
+    document.getElementById('output-pace-adj-gm-total-xpts').textContent = paceAdjGmTotalxPts.toFixed(0);
+    document.getElementById('output-pace-adj-xpts-remaining').textContent = paceAdjxPtsRemaining.toFixed(0);
 
     // Update static data UI for both teams
     updateStaticDataUI(team1Data); // You might need to separate UI elements for team 1 and team 2
@@ -196,6 +203,7 @@ function updateStaticDataUI(teamData, teamPrefix) {
         document.getElementById(`${teamPrefix}-ptsGm`).textContent = teamData.ptsGm;
         document.getElementById(`${teamPrefix}-fgPer`).textContent = teamData.fgPer;
         document.getElementById(`${teamPrefix}-threePer`).textContent = teamData.threePer;
+        document.getElementById(`${teamPrefix}-ptsOppGm`).textContent = teamData.ptsOppGm;
         // Add more elements as needed
     }
 }

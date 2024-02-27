@@ -264,6 +264,14 @@ h3 {
     justify-content: center;
 }
 
+#team1-top-row, #team2-top-row, #team1-bottom-row, #team2-bottom-row  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .team-detail, .output-detail {
     font-size: 1.75em;
     font-weight: 600;
@@ -273,7 +281,23 @@ h3 {
 }
 
 /* Span Styling */
-#team1-detail-cont span, #team2-detail-cont span, #output-detail-cont span {
+#team1-top-row span, #team2-top-row span {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#team1-bottom-row span, #team2-bottom-row span {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#output-detail-cont span {
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -445,7 +469,7 @@ h3 {
     }
     
     #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
-        font-size: .5em;
+        font-size: .45em;
     }
 
     .team-detail, .output-detail {
@@ -520,7 +544,7 @@ h3 {
     }
 
     #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
-        font-size: .65em;
+        font-size: .55em;
     }
 
     .team-detail, .output-detail {

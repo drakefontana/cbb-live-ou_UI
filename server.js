@@ -58,7 +58,7 @@ app.get('/api/baseData', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
     // Adjust the range to include all teams and relevant columns
-    const range = 'Calc!A2:AH363'; // Example range, adjust according to your sheet
+    const range = 'Calc!A2:AS363'; // Example range, adjust according to your sheet
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
@@ -78,7 +78,8 @@ app.get('/api/baseData', async (req, res) => {
                 possGmRank: row[10],  // column K
                 ptsGm: row[23], // column X
                 fgPer: row[26],  // column AA
-                threePer: row[29] // column AD
+                threePer: row[29], // column AD
+                ptsOppGm: row[35], // column AJ
                 // Add more properties as needed
             };
         });

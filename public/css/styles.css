@@ -612,9 +612,23 @@ h3 {
 /* Large Desktops */
 @media (min-width: 1441px) and (max-width: 2560px) {
     /* Default Code */
+    .team-select {
+        width: 80%;
+    }
+
+    #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+        width: 67%;
+    }
 }
 
 /* Large Displays */
 @media (min-width: 2561px) {
     /* Styles for large desktop screens */
+    .team-select {
+        width: 80%;
+    }
+
+    #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+        width: 67%;
+    }
 }

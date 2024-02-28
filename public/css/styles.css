@@ -216,6 +216,23 @@ body {
     background-color: var(--white);
 }
 
+/* Header Logo */
+header {
+    width: 100%;
+    padding-top: 2vh;
+    background-color: transparent;
+}
+
+#logo {
+    text-align: center; /* Centers the SVG logo */
+}
+
+#logo img {
+    width: 9vw; /* Adjust based on your logo's size */
+    height: auto;
+}
+
+
 /* Main Content */
 #main-content {
     display: flex;
@@ -447,6 +464,10 @@ h3 {
 /* Mobile Devices (Small Screens) */
 @media (max-width: 320px) {
     /* Styles for mobile devices */
+    #logo img {
+        width: 25vw;
+    }
+
     h2 {
         font-size: 1.125em;
     }
@@ -522,6 +543,10 @@ h3 {
 /* Mobile Devices (Large Screens) */
 @media (min-width: 321px) and (max-width: 425px) {
     /* Styles for tablets in portrait orientation */
+    #logo img {
+        width: 20vw;
+    }
+
     h2 {
         font-size: 1.15em;
     }
@@ -612,6 +637,10 @@ h3 {
 /* Large Desktops */
 @media (min-width: 1441px) and (max-width: 2560px) {
     /* Default Code */
+    #logo img {
+        width: 7vw;
+    }
+
     .team-select {
         width: 80%;
     }
@@ -624,6 +653,10 @@ h3 {
 /* Large Displays */
 @media (min-width: 2561px) {
     /* Styles for large desktop screens */
+    #logo img {
+        width: 7vw;
+    }
+
     .team-select {
         width: 80%;
     }

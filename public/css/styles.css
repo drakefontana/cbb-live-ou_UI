@@ -334,6 +334,7 @@ h3 {
     align-items: center;
     position: absolute;
     justify-content: space-around;
+    pointer-events: none;
 }
 
 #team1-select-orna-l,
@@ -345,6 +346,7 @@ h3 {
     display: flex;
     overflow: visible;
     visibility: visible;
+    pointer-events: none;
 }
 
 #team2-select-orna-l,
@@ -356,6 +358,7 @@ h3 {
     display: flex;
     overflow: visible;
     visibility: visible;
+    pointer-events: none;
 }
 
 #team1-select-orna-l,
@@ -386,6 +389,7 @@ h3 {
     z-index: 2;
     display: flex;
     transform: translateX(28vw);
+    pointer-events: none;
 }
 
 .team-select {

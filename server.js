@@ -58,12 +58,13 @@ app.get('/api/baseData', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
     // Adjust the range to include all teams and relevant columns
-    const range = 'Calc!A2:AS363'; // Example range, adjust according to your sheet
+    const range = 'Calc!A2:AW363'; // Example range, adjust according to your sheet
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });
         const rows = response.data.values;
         const teamsData = rows.map((row) => {
+            // console.log('Processing row:', row); // Log each row
             // Map each row to an object with relevant properties
             return {
                 rank: row[0], // column A
@@ -80,6 +81,8 @@ app.get('/api/baseData', async (req, res) => {
                 fgPer: row[26],  // column AA
                 threePer: row[29], // column AD
                 ptsOppGm: row[35], // column AJ
+                colorPri: row[46], // column AU
+                colorSec: row[47], // column AV
                 // Add more properties as needed
             };
         });

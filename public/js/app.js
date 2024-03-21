@@ -77,9 +77,16 @@ function updateStaticAndOutputValues() {
     const team1StaticData = baseData.find(team => team.team === team1Name);
     const team2StaticData = baseData.find(team => team.team === team2Name);
     
+    // console.log('Received data from server:', baseData);
+
     // Update the UI with static data
     updateStaticDataUI(team1StaticData, 'team1'); // 'team1' is a placeholder class or ID prefix
     updateStaticDataUI(team2StaticData, 'team2'); // 'team2' is a placeholder class or ID prefix
+
+    // console.log('Selected Team 1:', team1Name);
+    // console.log('Found Team 1 Data:', team1StaticData);
+    // console.log('Selected Team 2:', team2Name);
+    // console.log('Found Team 2 Data:', team2StaticData);
     
     // Update score headers with team names
     document.getElementById('team1-score-head').textContent = team1Name;
@@ -104,7 +111,7 @@ function performCalculations() {
 
     if (!team1Data || !team2Data) return;
 
-    console.log(`Calculating with team1: ${team1Name}, team2: ${team2Name}, timeRemaining: ${timeRemaining}`);
+    // console.log(`Calculating with team1: ${team1Name}, team2: ${team2Name}, timeRemaining: ${timeRemaining}`);
 
     // Calculate Adjusted Base PPG
     // Calculating Base PPG for team 1 against team 2 defense
@@ -204,8 +211,12 @@ function updateStaticDataUI(teamData, teamPrefix) {
         document.getElementById(`${teamPrefix}-fgPer`).textContent = teamData.fgPer;
         document.getElementById(`${teamPrefix}-threePer`).textContent = teamData.threePer;
         document.getElementById(`${teamPrefix}-ptsOppGm`).textContent = teamData.ptsOppGm;
-        // Add more elements as needed
+        // Update CSS variables with the team colors, if the teams are found
+        document.documentElement.style.setProperty(`--${teamPrefix}-primary`, teamData.colorPri);
+        document.documentElement.style.setProperty(`--${teamPrefix}-secondary`, teamData.colorSec);
+        // console.log(`Setting color for ${teamPrefix}:`, teamData.colorPri, teamData.colorSec);
     }
+    // Add more elements as needed
 }
 
 // Attach event listeners to dropdowns for dynamic updates

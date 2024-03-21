@@ -3,6 +3,15 @@
     --black: #131314;
     --white: #F4F6F3;
     --alert-red: #EF182B;
+    /* New Team Color Variables (placeholders) */
+    --team1-primary: #131314;
+    /* Example default color */
+    --team1-secondary: #131314;
+    /* Example default color */
+    --team2-primary: #131314;
+    /* Example default color */
+    --team2-secondary: #131314;
+    /* Example default color */
 }
 
 /* Font-Face */
@@ -224,11 +233,13 @@ header {
 }
 
 #logo {
-    text-align: center; /* Centers the SVG logo */
+    text-align: center;
+    /* Centers the SVG logo */
 }
 
 #logo img {
-    width: 9vw; /* Adjust based on your logo's size */
+    width: 9vw;
+    /* Adjust based on your logo's size */
     height: auto;
 }
 
@@ -239,15 +250,44 @@ header {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    width: 100vw;    
+    width: 100vw;
 }
 
 /* Headings */
-.team-head, .time-head, .score-head {
+.team-head,
+.time-head,
+.score-head {
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.team-head {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    padding: 1.5vh 1vw;
+    width: 16vw;
+    height: 3vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+#team-head-orna-1,
+#team-head-orna-2 {
+    overflow: visible;
+    width: 7vw;
+    margin-top: -1.5vh;
+}
+
+.orna-fill-1 {
+    fill: var(--team1-primary);
+    stroke-width: 0px;
+}
+
+.orna-fill-2 {
+    fill: var(--team2-primary);
+    stroke-width: 0px;
 }
 
 h2 {
@@ -261,8 +301,9 @@ h3 {
     font-style: normal;
 }
 
-/* Team Containers */
-#team1-container, #team2-container {
+/* Team Select Containers */
+#team1-container,
+#team2-container {
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -272,8 +313,135 @@ h3 {
     flex-wrap: wrap;
 }
 
+.team1-select-cont,
+.team2-select-cont {
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 6vh;
+}
+
+.team-selection-orna-cont {
+    z-index: 3;
+    display: flex;
+    width: 94%;
+    align-items: center;
+    position: absolute;
+    justify-content: space-around;
+}
+
+#team1-select-orna-l,
+#team1-select-orna-m,
+#team1-select-orna-r {
+    fill: var(--team1-secondary);
+    stroke-width: 0px;
+    position: relative;
+    display: flex;
+    overflow: visible;
+    visibility: visible;
+}
+
+#team2-select-orna-l,
+#team2-select-orna-m,
+#team2-select-orna-r {
+    fill: var(--team2-secondary);
+    stroke-width: 0px;
+    position: relative;
+    display: flex;
+    overflow: visible;
+    visibility: visible;
+}
+
+#team1-select-orna-l,
+#team2-select-orna-l {
+    width: 30%;
+    height: auto;
+    transform: translateX(-1vw);
+}
+
+#team1-select-orna-m,
+#team2-select-orna-m {
+    width: 22%;
+    height: auto;
+    transform: translateX(-7vw);
+}
+
+#team1-select-orna-r,
+#team2-select-orna-r {
+    width: 12.5%;
+    height: auto;
+    transform: translate(0vw, -0.25vh);
+}
+
+#selection-arrow {
+    width: 4vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    transform: translateX(28vw);
+}
+
+.team-select {
+    width: 100%;
+    height: 10vh;
+    -webkit-appearance: none;
+    /* For WebKit browsers */
+    -moz-appearance: none;
+    /* For Mozilla browsers */
+    appearance: none;
+    /* Standard */
+    color: var(--white);
+    border: .25vw solid;
+    border-radius: .5vw;
+    background: transparent;
+    font-size: 2em;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    padding: 1.5vh;
+    margin-bottom: 0vh;
+    z-index: 1;
+    position: absolute;
+}
+
+#team1-select {
+    border-color: var(--team1-primary);
+}
+
+#team2-select {
+    border-color: var(--team2-primary);
+}
+
+.team1-select-high-fill {
+    fill: var(--team1-primary);
+    stroke-width: 0px;
+}
+
+.team2-select-high-fill {
+    fill: var(--team2-primary);
+    stroke-width: 0px;
+}
+
+#team1-select-highlight,
+#team2-select-highlight {
+    overflow: visible;
+    z-index: 0;
+    width: 50vw;
+    position: absolute;
+}
+
 /* Stat Details */
-#team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+#team1-detail-cont,
+#team2-detail-cont,
+#output-detail-cont,
+#pace-output-detail-cont {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -281,24 +449,101 @@ h3 {
     justify-content: center;
 }
 
-#team1-top-row, #team2-top-row, #team1-bottom-row, #team2-bottom-row  {
+#team1-top-row,
+#team2-top-row,
+#team1-bottom-row,
+#team2-bottom-row {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 3vh;
 }
 
-.team-detail, .output-detail {
-    font-size: 1.75em;
+.team-detail,
+.output-detail {
+    font-size: 1.5em;
     font-weight: 600;
     font-style: italic;
     margin-top: 1vh;
     margin-bottom: 2vh;
+    border: 0.25vw solid;
+    border-radius: 0.5vw;
+    padding: 1.5vh 1vw;
+    width: 5vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#team1-rank,
+#team1-rec,
+#team1-offRank,
+#team1-defRank,
+#team1-possGm,
+#team1-ptsGm,
+#team1-ptsOppGm,
+#team1-fgPer,
+#team1-threePer {
+    border-color: var(--team1-secondary);
+}
+
+#team2-rank,
+#team2-rec,
+#team2-offRank,
+#team2-defRank,
+#team2-possGm,
+#team2-ptsGm,
+#team2-ptsOppGm,
+#team2-fgPer,
+#team2-threePer {
+    border-color: var(--team2-secondary);
+}
+
+.team1-highlight-fill {
+    fill: var(--team1-primary);
+    stroke-width: 0px;
+}
+
+.team2-highlight-fill {
+    fill: var(--team2-primary);
+    stroke-width: 0px;
+}
+
+#team1-highlight,
+#team2-highlight {
+    overflow: visible;
+    z-index: 0;
+    position: absolute;
+    width: 10vw;
+    margin-top: 0.25vh;
+    margin-left: 0.5vw;
+}
+
+#team1-detail-cont span h3,
+#team2-detail-cont span h3 {
+    font-size: .75em;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.team1-detail-title,
+.team2-detail-title {
+    color: var(--white);
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* Span Styling */
-#team1-top-row span, #team2-top-row span {
+#team1-top-row span,
+#team2-top-row span {
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -306,7 +551,8 @@ h3 {
     align-items: center;
 }
 
-#team1-bottom-row span, #team2-bottom-row span {
+#team1-bottom-row span,
+#team2-bottom-row span {
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -329,12 +575,14 @@ h3 {
     align-items: center;
 }
 
-.pace-output-detail-full, .pace-output-detail-empty {
+.pace-output-detail-full,
+.pace-output-detail-empty {
     width: 25%;
 }
 
 /* Headings within Spans */
-#team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
+#output-detail-cont span h3,
+#pace-output-detail-cont span h3 {
     font-size: .75em;
     margin-top: 2vh;
     margin-bottom: .5vh;
@@ -349,6 +597,77 @@ h3 {
     justify-content: center;
     margin-bottom: 0vh;
     align-items: center;
+}
+
+.progress-ring-container {
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vh;
+}
+
+.progress-ring {
+    position: absolute;
+    z-index: 1;
+    /* Ensure it's behind the select */
+    transform: rotate(-90deg);
+    /* Rotate so progress starts from the top */
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: scaleX(-1);
+    /* Flip horizontally to correct the rotation direction */
+}
+
+#time-up,
+#time-down {
+    fill: var(--white);
+    stroke-width: 0px;
+    width: 2vw;
+    z-index: 1;
+    margin: -2vh 0 -2vh 0;
+}
+
+.time-select {
+    -webkit-appearance: none;
+    /* For WebKit browsers */
+    -moz-appearance: none;
+    /* For Mozilla browsers */
+    appearance: none;
+    /* Standard */
+    color: var(--white);
+    font-family: 'Technology';
+    font-size: 5em;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    padding: 3.5vh;
+    background: transparent;
+    border: none;
+    z-index: 1;
+    position: relative;
+}
+
+.time-select option {
+    font-family: 'Technology';
+    font-weight: bold;
+    font-style: italic;
+}
+
+#time-enclosure {
+    overflow: visible;
+    z-index: 0;
+    position: absolute;
+    width: 12vw;
+}
+
+#time-enclosure-shape {
+    fill: var(--black);
+    stroke-width: 0px;
 }
 
 #current-scores-container {
@@ -377,7 +696,8 @@ h3 {
     align-items: center;
 }
 
-#team1-score-head, #team2-score-head {
+#team1-score-head,
+#team2-score-head {
     font-size: 1.25em;
     font-weight: 700;
     font-style: italic;
@@ -398,7 +718,8 @@ h3 {
     font-style: italic;
 }
 
-#output-container, #pace-output-container {
+#output-container,
+#pace-output-container {
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -413,43 +734,9 @@ h3 {
 }
 
 /* Inputs & Selectors */
-.team-select {
-    width: 100%;
-    border: .25vw solid var(--black);
-    border-radius: .5vw;
-    color: var(--black);
-    background-color: var(--white);
-    font-size: 2em;
-    font-weight: 700;
-    font-style: italic;
-    text-align: center;
-    padding: 1.5vh;
-    margin-bottom: 0vh;
-}
-
-.time-select {
-    width: 25%;
-    border: .25vw solid var(--white);
-    border-radius: .5vw;
-    color: var(--white);
-    background-color: var(--black);
-    font-family: 'Technology';
-    font-size: 5em;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
-    padding: 1.5vh;
-}
-
-.time-select option {
-    font-family: 'Technology';
-    font-weight: bold;
-    font-style: italic;
-}
-
 .team-score {
     width: 100%;
-    border: .25vw solid var(--white);
+    border-width: .5vw;
     border-radius: .5vw;
     color: var(--white);
     background-color: var(--black);
@@ -461,51 +748,156 @@ h3 {
     padding: 1.5vh;
 }
 
+#current-score-team1 {
+    border-color: var(--team1-primary);
+    border-style: double;
+}
+
+#current-score-team2 {
+    border-color: var(--team2-primary);
+    border-style: double;
+}
+
 /* Mobile Devices (Small Screens) */
 @media (max-width: 320px) {
+
     /* Styles for mobile devices */
     #logo img {
         width: 25vw;
     }
 
-    h2 {
-        font-size: 1.125em;
+    .team-head {
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        padding: 1.5vh 1vw;
+        width: 30vw;
+        height: 1.5vh;
     }
 
-    #team1-container, #team2-container, #output-container, #pace-output-container {
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 12vw;
+        height: auto;
+        margin-top: -1.25vh;
+    }
+
+    h2 {
+        font-size: .85em;
+    }
+
+    #team1-container,
+    #team2-container,
+    #output-container,
+    #pace-output-container {
         margin-bottom: 1vh;
     }
 
+    #team1-select-orna-l,
+    #team2-select-orna-l {
+        width: 44%;
+        height: auto;
+        transform: translateX(2vw);
+    }
+
+    #team1-select-orna-m,
+    #team2-select-orna-m {
+        width: 35%;
+        height: auto;
+        transform: translateX(-13vw);
+    }
+
+    #team1-select-orna-r,
+    #team2-select-orna-r {
+        width: 19.5%;
+        height: auto;
+        transform: translate(-6vw, -0.25vh);
+    }
+
+    .team1-select-cont,
+    .team2-select-cont {
+        margin-top: 3vh;
+        margin-bottom: 4vh;
+    }
+
+    .team-selection-orna-cont {
+        width: 118%;
+    }
+
+    #selection-arrow {
+        width: 7vw;
+        transform: translateX(33vw);
+    }
+
     .team-select {
-        border: 1.5vw solid var(--black);
+        border: 0.95vw solid;
         border-radius: 4.5vw;
-        font-size: 1.0675em;
+        font-size: .75em;
+        height: 6vh;
+    }
+
+    #team1-select-highlight,
+    #team2-select-highlight {
+        width: 75vw;
+    }
+
+    #team1-highlight,
+    #team2-highlight {
+        width: 15vw;
+    }
+
+    #team1-top-row,
+    #team2-top-row,
+    #team1-bottom-row,
+    #team2-bottom-row {
+        margin-top: 2vh;
+    }
+
+    .team1-detail-title,
+    .team2-detail-title {
+        margin-bottom: 0.5vh;
     }
 
     .time-select {
-        width: 50%;
-        border: 1.5vw solid var(--white);
-        border-radius: 5.5vw;
         font-size: 2.5em;
     }
-    
-    #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
-        font-size: .45em;
+
+    #time-enclosure {
+        width: 33vw;
     }
 
-    .team-detail, .output-detail {
-        font-size: 1em;
+    #time-up,
+    #time-down {
+        width: 4.5vw;
+        margin: -1.5vh 0 -1.5vh 0;
+    }
+
+    #team1-detail-cont span h3,
+    #team2-detail-cont span h3,
+    #output-detail-cont span h3,
+    #pace-output-detail-cont span h3 {
+        font-size: .2em;
+    }
+
+    .team-detail,
+    .output-detail {
+        font-size: .75em;
         margin-top: .5vh;
         margin-bottom: .75vh;
+        border: 0.75vw solid;
+        border-radius: 0.5vw;
+        padding: 1.25vh 1.25vw;
+        width: 9vw;
+        height: 0.5vh;
     }
 
-    #team1-score-head, #team2-score-head {
+    #team1-score-head,
+    #team2-score-head {
         font-size: 1em;
         margin-bottom: 1vh;
     }
 
     #pace-description-container h3 {
-        font-size: 1.05em;
+        font-size: .85em;
         margin-top: 3vh;
         margin-bottom: 1vh;
     }
@@ -521,7 +913,7 @@ h3 {
     }
 
     .team-score {
-        border: 1.05vw solid var(--white);
+        border-width: 1.05vw;
         border-radius: 3.5vw;
         font-size: 2.33em;
     }
@@ -529,6 +921,7 @@ h3 {
     #output-pace-flag {
         padding-top: 0vh;
         padding-bottom: 2vh;
+        font-size: .85em;
     }
 
     .pace-output-detail-empty {
@@ -542,49 +935,144 @@ h3 {
 
 /* Mobile Devices (Large Screens) */
 @media (min-width: 321px) and (max-width: 425px) {
+
     /* Styles for tablets in portrait orientation */
     #logo img {
         width: 20vw;
     }
 
-    h2 {
-        font-size: 1.15em;
+    .team-head {
+        font-size: 1em;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        padding: 1.5vh 1vw;
+        width: 25vw;
+        height: 1.5vh;
     }
 
-    #team1-container, #team2-container, #output-container, #pace-output-container {
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 11vw;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    #team1-container,
+    #team2-container,
+    #output-container,
+    #pace-output-container {
         margin-bottom: 2vh;
     }
 
+    #team1-select-orna-l,
+    #team2-select-orna-l {
+        width: 46%;
+        height: auto;
+        transform: translateX(3vw);
+    }
+
+    #team1-select-orna-m,
+    #team2-select-orna-m {
+        width: 35%;
+        height: auto;
+        transform: translateX(-13vw);
+    }
+
+    #team1-select-orna-r,
+    #team2-select-orna-r {
+        width: 18.5%;
+        height: auto;
+        transform: translate(-6vw, -0.25vh);
+    }
+
+    .team1-select-cont,
+    .team2-select-cont {
+        margin-top: 5vh;
+        margin-bottom: 6vh;
+    }
+
+    .team-selection-orna-cont {
+        width: 120%;
+    }
+
+    #selection-arrow {
+        width: 8vw;
+        transform: translateX(33vw);
+    }
+
     .team-select {
-        border: 1.05vw solid var(--black);
+        border: 0.75vw solid;
         border-radius: 3.5vw;
-        font-size: 1.25em;
+        font-size: 1em;
+        height: 8vh;
+    }
+
+    #team1-select-highlight,
+    #team2-select-highlight {
+        width: 75vw;
+    }
+
+    #team1-highlight,
+    #team2-highlight {
+        width: 15vw;
+    }
+
+    #team1-top-row,
+    #team2-top-row,
+    #team1-bottom-row,
+    #team2-bottom-row {
+        margin-top: 2vh;
+    }
+
+    .team1-detail-title,
+    .team2-detail-title {
+        margin-bottom: 0.5vh;
     }
 
     .time-select {
-        width: 50%;
-        border: 1.05vw solid var(--white);
-        border-radius: 3.5vw;
         font-size: 2.33em;
     }
 
-    #team1-detail-cont span h3, #team2-detail-cont span h3, #output-detail-cont span h3, #pace-output-detail-cont span h3 {
-        font-size: .55em;
+    #time-enclosure {
+        width: 24vw;
     }
 
-    .team-detail, .output-detail {
-        font-size: 1.125em;
+    #time-up,
+    #time-down {
+        width: 3vw;
+        margin: -1.5vh 0 -1.5vh 0;
+    }
+
+    #team1-detail-cont span h3,
+    #team2-detail-cont span h3,
+    #output-detail-cont span h3,
+    #pace-output-detail-cont span h3 {
+        font-size: .4em;
+    }
+
+    .team-detail,
+    .output-detail {
+        font-size: .9em;
         margin-top: .5vh;
         margin-bottom: .75vh;
+        border: 0.67vw solid;
+        border-radius: 0.5vw;
+        padding: 1.5vh 1.25vw;
+        width: 9vw;
+        height: 0.75vh;
     }
 
-    #team1-score-head, #team2-score-head {
+    #team1-score-head,
+    #team2-score-head {
         font-size: 1.05em;
         margin-bottom: 1vh;
     }
 
     #pace-description-container h3 {
-        font-size: 1.05em;
+        font-size: 1em;
         margin-top: 3vh;
         margin-bottom: 1vh;
     }
@@ -600,7 +1088,7 @@ h3 {
     }
 
     .team-score {
-        border: 1.05vw solid var(--white);
+        border-width: 1.05vw;
         border-radius: 3.5vw;
         font-size: 2.33em;
     }
@@ -608,6 +1096,7 @@ h3 {
     #output-pace-flag {
         padding-top: 0vh;
         padding-bottom: 2vh;
+        font-size: 1em;
     }
 
     .pace-output-detail-empty {
@@ -620,7 +1109,7 @@ h3 {
 }
 
 /* Tablets (Portrait) */
-@media (min-width: 425px) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
     /* Styles for tablets in portrait orientation */
 }
 
@@ -631,37 +1120,97 @@ h3 {
 
 /* Small Desktops */
 @media (min-width: 1025px) and (max-width: 1440px) {
-    /* Styles for tablets in landscape orientation and small desktop screens */
-}
 
-/* Large Desktops */
-@media (min-width: 1441px) and (max-width: 2560px) {
     /* Default Code */
     #logo img {
         width: 7vw;
     }
 
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 5vw;
+        margin-top: -1.5vh;
+    }
+
+    #selection-arrow {
+        width: 4vw;
+        transform: translateX(28vw);
+    }
+
     .team-select {
         width: 80%;
     }
 
-    #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+    .team-detail, .output-detail {
+        width: 6vw;
+    }
+
+    #team1-detail-cont,
+    #team2-detail-cont,
+    #output-detail-cont,
+    #pace-output-detail-cont {
+        width: 67%;
+    }
+}
+
+/* Large Desktops */
+@media (min-width: 1441px) and (max-width: 2559px) {
+
+    /* Default Code */
+    #logo img {
+        width: 7vw;
+    }
+
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 5vw;
+        margin-top: -1.5vh;
+    }
+
+    #selection-arrow {
+        width: 4vw;
+        transform: translateX(28vw);
+    }
+
+    .team-select {
+        width: 80%;
+    }
+
+    #team1-detail-cont,
+    #team2-detail-cont,
+    #output-detail-cont,
+    #pace-output-detail-cont {
         width: 67%;
     }
 }
 
 /* Large Displays */
-@media (min-width: 2561px) {
+@media (min-width: 2560px) {
+
     /* Styles for large desktop screens */
     #logo img {
         width: 7vw;
+    }
+
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 3vw;
+        margin-top: -0.5vh;
+    }
+
+    #selection-arrow {
+        width: 4vw;
+        transform: translateX(28vw);
     }
 
     .team-select {
         width: 80%;
     }
 
-    #team1-detail-cont, #team2-detail-cont, #output-detail-cont, #pace-output-detail-cont {
+    #team1-detail-cont,
+    #team2-detail-cont,
+    #output-detail-cont,
+    #pace-output-detail-cont {
         width: 67%;
     }
 }

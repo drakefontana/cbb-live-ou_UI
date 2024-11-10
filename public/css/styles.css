@@ -1115,11 +1115,349 @@ h3 {
 /* Tablets (Portrait) */
 @media (min-width: 426px) and (max-width: 768px) {
     /* Styles for tablets in portrait orientation */
+    #logo img {
+        width: 20vw;
+    }
+
+    .team-head {
+        font-size: 1em;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        padding: 1.5vh 1vw;
+        width: 25vw;
+        height: 1.5vh;
+    }
+
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 11vw;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    #team1-container,
+    #team2-container,
+    #output-container,
+    #pace-output-container {
+        margin-bottom: 2vh;
+    }
+
+    #team1-select-orna-l,
+    #team2-select-orna-l {
+        width: 46%;
+        height: auto;
+        transform: translateX(3vw);
+    }
+
+    #team1-select-orna-m,
+    #team2-select-orna-m {
+        width: 35%;
+        height: auto;
+        transform: translateX(-13vw);
+    }
+
+    #team1-select-orna-r,
+    #team2-select-orna-r {
+        width: 18.5%;
+        height: auto;
+        transform: translate(-6vw, -0.25vh);
+    }
+
+    .team1-select-cont,
+    .team2-select-cont {
+        margin-top: 5vh;
+        margin-bottom: 6vh;
+    }
+
+    .team-selection-orna-cont {
+        width: 120%;
+    }
+
+    #selection-arrow {
+        width: 8vw;
+        transform: translateX(33vw);
+    }
+
+    .team-select {
+        border: 0.75vw solid;
+        border-radius: 3.5vw;
+        font-size: 1em;
+        height: 8vh;
+    }
+
+    #team1-select-highlight,
+    #team2-select-highlight {
+        width: 75vw;
+    }
+
+    #team1-highlight,
+    #team2-highlight {
+        width: 15vw;
+    }
+
+    #team1-top-row,
+    #team2-top-row,
+    #team1-bottom-row,
+    #team2-bottom-row {
+        margin-top: 2vh;
+    }
+
+    .team1-detail-title,
+    .team2-detail-title {
+        margin-bottom: 0.5vh;
+    }
+
+    .time-select {
+        font-size: 2.33em;
+    }
+
+    #time-enclosure {
+        width: 24vw;
+    }
+
+    #time-up,
+    #time-down {
+        width: 3vw;
+        margin: -1.5vh 0 -1.5vh 0;
+    }
+
+    #team1-detail-cont span h3,
+    #team2-detail-cont span h3,
+    #output-detail-cont span h3,
+    #pace-output-detail-cont span h3 {
+        font-size: .4em;
+    }
+
+    .team-detail,
+    .output-detail {
+        font-size: .9em;
+        margin-top: .5vh;
+        margin-bottom: .75vh;
+        border: 0.67vw solid;
+        border-radius: 0.5vw;
+        padding: 1.5vh 1.25vw;
+        width: 10vw;
+        height: 0.75vh;
+    }
+
+    #team1-score-head,
+    #team2-score-head {
+        font-size: 1.05em;
+        margin-bottom: 1vh;
+    }
+
+    #pace-description-container h3 {
+        font-size: 1em;
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+    }
+
+    #scoreboard-display {
+        width: 80vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scoreboard-display span {
+        width: 67%;
+    }
+
+    .team-score {
+        border-width: 1.05vw;
+        border-radius: 3.5vw;
+        font-size: 2.33em;
+    }
+
+    #output-pace-flag {
+        padding-top: 0vh;
+        padding-bottom: 2vh;
+        font-size: 1em;
+    }
+
+    .pace-output-detail-empty {
+        width: 0vw;
+    }
+
+    .pace-output-detail-full {
+        width: 50%;
+    }
 }
 
 /* Tablets (Landscape) */
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Styles for tablets in landscape orientation and small desktop screens */
+    #logo img {
+        width: 20vw;
+    }
+
+    .team-head {
+        font-size: 1em;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+        padding: 1.5vh 1vw;
+        width: 25vw;
+        height: 1.5vh;
+    }
+
+    #team-head-orna-1,
+    #team-head-orna-2 {
+        width: 11vw;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    #team1-container,
+    #team2-container,
+    #output-container,
+    #pace-output-container {
+        margin-bottom: 2vh;
+    }
+
+    #team1-select-orna-l,
+    #team2-select-orna-l {
+        width: 46%;
+        height: auto;
+        transform: translateX(3vw);
+    }
+
+    #team1-select-orna-m,
+    #team2-select-orna-m {
+        width: 35%;
+        height: auto;
+        transform: translateX(-13vw);
+    }
+
+    #team1-select-orna-r,
+    #team2-select-orna-r {
+        width: 18.5%;
+        height: auto;
+        transform: translate(-6vw, -0.25vh);
+    }
+
+    .team1-select-cont,
+    .team2-select-cont {
+        margin-top: 5vh;
+        margin-bottom: 6vh;
+    }
+
+    .team-selection-orna-cont {
+        width: 120%;
+    }
+
+    #selection-arrow {
+        width: 8vw;
+        transform: translateX(33vw);
+    }
+
+    .team-select {
+        border: 0.75vw solid;
+        border-radius: 3.5vw;
+        font-size: 1em;
+        height: 8vh;
+    }
+
+    #team1-select-highlight,
+    #team2-select-highlight {
+        width: 75vw;
+    }
+
+    #team1-highlight,
+    #team2-highlight {
+        width: 15vw;
+    }
+
+    #team1-top-row,
+    #team2-top-row,
+    #team1-bottom-row,
+    #team2-bottom-row {
+        margin-top: 2vh;
+    }
+
+    .team1-detail-title,
+    .team2-detail-title {
+        margin-bottom: 0.5vh;
+    }
+
+    .time-select {
+        font-size: 2.33em;
+    }
+
+    #time-enclosure {
+        width: 24vw;
+    }
+
+    #time-up,
+    #time-down {
+        width: 3vw;
+        margin: -1.5vh 0 -1.5vh 0;
+    }
+
+    #team1-detail-cont span h3,
+    #team2-detail-cont span h3,
+    #output-detail-cont span h3,
+    #pace-output-detail-cont span h3 {
+        font-size: .4em;
+    }
+
+    .team-detail,
+    .output-detail {
+        font-size: .9em;
+        margin-top: .5vh;
+        margin-bottom: .75vh;
+        border: 0.67vw solid;
+        border-radius: 0.5vw;
+        padding: 1.5vh 1.25vw;
+        width: 10vw;
+        height: 0.75vh;
+    }
+
+    #team1-score-head,
+    #team2-score-head {
+        font-size: 1.05em;
+        margin-bottom: 1vh;
+    }
+
+    #pace-description-container h3 {
+        font-size: 1em;
+        margin-top: 3vh;
+        margin-bottom: 1vh;
+    }
+
+    #scoreboard-display {
+        width: 80vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scoreboard-display span {
+        width: 67%;
+    }
+
+    .team-score {
+        border-width: 1.05vw;
+        border-radius: 3.5vw;
+        font-size: 2.33em;
+    }
+
+    #output-pace-flag {
+        padding-top: 0vh;
+        padding-bottom: 2vh;
+        font-size: 1em;
+    }
+
+    .pace-output-detail-empty {
+        width: 0vw;
+    }
+
+    .pace-output-detail-full {
+        width: 50%;
+    }
 }
 
 /* Small Desktops */

@@ -1368,7 +1368,7 @@ h3 {
         border: 0.5vw solid;
         border-radius: 1.5vw;
         font-size: 1.35em;
-        height: 8vh;
+        height: 11vh;
     }
 
     #team1-select-highlight,
@@ -1486,13 +1486,24 @@ h3 {
         margin-top: -1.5vh;
     }
 
+    .team1-select-cont, .team2-select-cont {
+        margin-top: 7vh;
+        margin-bottom: 8vh;
+    }
+
     #selection-arrow {
-        width: 4vw;
+        width: 3vw;
         transform: translateX(28vw);
     }
 
     .team-select {
         width: 80%;
+        height: 12vh;
+        border: .5vw solid;
+        border-radius: .5vw;
+        font-size: 1.75em;
+        padding: 1.5vh;
+        margin-bottom: 0vh;
     }
 
     .team-detail, .output-detail {

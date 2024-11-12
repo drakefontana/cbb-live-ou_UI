@@ -1037,7 +1037,7 @@ h3 {
         height: 7vh;
         border: .75vw solid;
         border-radius: 3vw;
-        font-size: .9em;
+        font-size: .85em;
         padding: 0.5vh;
         margin-bottom: 0vh;
     }
@@ -1195,7 +1195,7 @@ h3 {
     }
 
     #logo img {
-        width: 25vw;
+        width: 16vw;
     }
 
     /* Main Content */
@@ -1207,7 +1207,7 @@ h3 {
     #current-scores-container, 
     #pace-output-container {
         width: 80vw;
-        margin-bottom: 2vh;
+        margin-bottom: 3vh;
     }
 
     /* Team Select Containers */
@@ -1215,8 +1215,8 @@ h3 {
     .team1-select-cont,
     .team2-select-cont {
         width: 100%;
-        margin-top: 3vh;
-        margin-bottom: 6vh;
+        margin-top: 4.5vh;
+        margin-bottom: 8vh;
     }
 
     .team-selection-orna-cont {
@@ -1225,40 +1225,40 @@ h3 {
 
     #team1-select-orna-l,
     #team2-select-orna-l {
-        width: 50%;
+        width: 45%;
         transform: translateX(-4vw);
     }
 
     #team1-select-orna-m,
     #team2-select-orna-m {
-        width: 40%;
-        transform: translateX(-16vw);
+        width: 35%;
+        transform: translateX(-9vw);
     }
 
     #team1-select-orna-r,
     #team2-select-orna-r {
-        width: 23%;
-        transform: translate(-10vw, -.125vh);
+        width: 19%;
+        transform: translate(1vw, -.125vh);
     }
 
     #selection-arrow {
         width: 5vw;
-        transform: translateX(33vw);
+        transform: translateX(34vw);
     }
 
     .team-select {
         width: 100%;
-        height: 7vh;
-        border: .75vw solid;
+        height: 8vh;
+        border: .67vw solid;
         border-radius: 3vw;
-        font-size: .9em;
-        padding: 0.5vh;
+        font-size: 1em;
+        padding: 1vh;
         margin-bottom: 0vh;
     }
 
     #team1-select-highlight,
     #team2-select-highlight {
-        width: 75vw;
+        width: 70vw;
     }
 
     /* Headings */
@@ -1270,12 +1270,12 @@ h3 {
 
     #team-head-orna-1,
     #team-head-orna-2 {
-        width: 10vw;
+        width: 9vw;
         margin-top: -1.25vh;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 1.125em;
     }
 
     /* Stat Details */
@@ -1284,30 +1284,30 @@ h3 {
     #team2-top-row,
     #team1-bottom-row,
     #team2-bottom-row {
-        margin-top: 1.25vh;
+        margin-top: 2vh;
     }
 
     .team-detail,
     .output-detail {
-        font-size: 0.75em;
-        margin-top: 1vh;
+        font-size: 0.85em;
+        margin-top: 1.25vh;
         margin-bottom: 0vh;
-        border: 0.67vw solid;
-        border-radius: 2vw;
-        width: 12vw;
-        height: 3vh;
+        border: 0.5vw solid;
+        border-radius: 1.5vw;
+        width: 11vw;
+        height: 4vh;
     }
 
     #team1-highlight,
     #team2-highlight {
-        width: 15vw;
-        margin-top: 0.1vh;
+        width: 14vw;
+        margin-top: 0.25vh;
         margin-left: 1.25vw;
     }
 
     #team1-detail-cont span h3,
     #team2-detail-cont span h3 {
-        font-size: .4em;
+        font-size: .5em;
     }
 
     /* Span Styling */
@@ -1334,7 +1334,7 @@ h3 {
     /* Headings within Spans */
     #output-detail-cont span h3,
     #pace-output-detail-cont span h3 {
-        font-size: .4em;
+        font-size: .5em;
         margin-top: 1vh;
         margin-bottom: .125vh;
     }
@@ -1342,22 +1342,22 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 3.5vh 0vw;
+        margin: 4vh 0vw;
     }
 
     #time-up,
     #time-down {
         width: 4vw;
-        margin: -1vh 0 -1vh 0;
+        margin: -.5vh 0 -.5vh 0;
     }
 
     .time-select {
-        font-size: 2.75em;
-        padding: 2.5vh;
+        font-size: 3em;
+        padding: 3vh;
     }
 
     #time-enclosure {
-        width: 25vw;
+        width: 24vw;
     }
 
     #scoreboard-display {
@@ -1369,17 +1369,17 @@ h3 {
 
     #scoreboard-display span {
         width: 100%;
-        margin-bottom: 0.75vh;
+        margin-bottom: 1vh;
     }
 
     #team1-score-head,
     #team2-score-head {
-        font-size: .85em;
+        font-size: 1em;
     }
 
     /* Pace */
     #pace-description-container h3 {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     #output-pace-flag {
@@ -1393,11 +1393,11 @@ h3 {
 
     /* Inputs & Selectors */
     .team-score {
-        width: 75%;
-        padding: 1.125vh 0vh;
-        border-width: 1.5vw;
-        border-radius: 4vw;
-        font-size: 2em;
+        width: 67%;
+        padding: 1.25vh 0vh;
+        border-width: 1.25vw;
+        border-radius: 3vw;
+        font-size: 2.25em;
     }
 }
 

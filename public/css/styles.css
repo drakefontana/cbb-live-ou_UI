@@ -704,7 +704,7 @@ h3 {
 }
 
 #foul-game-indicator-shape {
-    fill: var(--black);
+    fill: var(--alert-red);
     stroke-width: 0px;
 }
 

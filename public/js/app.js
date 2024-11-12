@@ -116,12 +116,18 @@ function performCalculations() {
     // Calculate score differential
     const scoreDifferential = Math.abs(currentScoreTeam1 - currentScoreTeam2);
 
-    // Display foul game indicator if time is 4 or less and score difference is 9 or less
     const foulIndicator = document.getElementById('foul-game-indicator');
+    const timeEnclIndicatorShape = document.querySelector('#time-encl-indicator-shape');
+
+    // Display foul game indicator if time is 4 or less and score difference is 9 or less
     if (timeRemaining <= 4 && scoreDifferential <= 9) {
         foulIndicator.style.display = 'block';
+        // Change fill color to alert red
+        timeEnclIndicatorShape.style.fill = 'var(--alert-red)';
     } else {
         foulIndicator.style.display = 'none';
+        // Revert fill color to default
+        timeEnclIndicatorShape.style.fill = 'var(--black)';
     }
 
     // Calculate Adjusted Base PPG

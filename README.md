@@ -11,3 +11,4 @@ Updates to come:
 - Possession Scraper (FG,FT,TO avgs)
 - Brand Expansion (Score Enclosures, Time Enclosure, Animated Foul Game Indicator, Pace Flag Animation)
 - Real-Time Matchup Selction (header bug selection method)
+- Conference Logos / Team Logos

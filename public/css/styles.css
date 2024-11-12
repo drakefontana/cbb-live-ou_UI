@@ -618,7 +618,7 @@ h3 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 4vh 0vw;
+    margin: 5.5vh 0vw 5vh 0vw;
 }
 
 .progress-ring {
@@ -696,9 +696,10 @@ h3 {
 
 #foul-game-indicator {
     overflow: visible;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
-    width: 13vw;
+    width: 10vw;
+    transform: translate(0vw, -.5vh);
 }
 
 #foul-game-indicator-shape {
@@ -957,7 +958,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 3vh 0vw;
+        margin: 5vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -977,6 +978,11 @@ h3 {
 
     #time-encl-indicator {
         width: 39vw;
+    }
+
+    #foul-game-indicator {
+        width: 31vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {
@@ -1183,7 +1189,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 3.5vh 0vw;
+        margin: 5vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -1203,6 +1209,11 @@ h3 {
 
     #time-encl-indicator {
         width: 33vw;
+    }
+
+    #foul-game-indicator {
+        width: 26vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {
@@ -1409,7 +1420,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 4vh 0vw;
+        margin: 8vh 0vw 6vh 0vw;
     }
 
     #time-up,
@@ -1429,6 +1440,11 @@ h3 {
 
     #time-encl-indicator {
         width: 31vw;
+    }
+
+    #foul-game-indicator {
+        width: 24vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {
@@ -1636,7 +1652,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 3vh 0vw;
+        margin: 6vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -1656,6 +1672,11 @@ h3 {
 
     #time-encl-indicator {
         width: 17vw;
+    }
+
+    #foul-game-indicator {
+        width: 13vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {
@@ -1860,7 +1881,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 4vh 0vw;
+        margin: 5.5vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -1880,6 +1901,11 @@ h3 {
 
     #time-encl-indicator {
         width: 13vw;
+    }
+
+    #foul-game-indicator {
+        width: 10vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {
@@ -2084,7 +2110,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 4.5vh 0vw;
+        margin: 7vh 0vw 5vh 0vw;
     }
 
     #time-up,
@@ -2104,6 +2130,11 @@ h3 {
 
     #time-encl-indicator {
         width: 13vw;
+    }
+
+    #foul-game-indicator {
+        width: 10vw;
+        transform: translate(0vw, -.5vh);
     }
 
     #scoreboard-display {

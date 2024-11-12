@@ -257,11 +257,17 @@ header {
 #selection-container {
     display: flex;
     width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    gap: 5vw;
+    padding: 0vw 5vw;
 }
 
 #team1-container,
 #team2-container {
-    width: 67vw;
+    width: 42.5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -320,32 +326,32 @@ header {
 
 #team1-select-orna-l,
 #team2-select-orna-l {
-    width: 33%;
+    width: 40%;
     height: auto;
-    transform: translateX(-6vw);
+    transform: translateX(-2vw);
 }
 
 #team1-select-orna-m,
 #team2-select-orna-m {
-    width: 23%;
+    width: 37%;
     height: auto;
-    transform: translateX(-7vw);
+    transform: translateX(-4vw);
 }
 
 #team1-select-orna-r,
 #team2-select-orna-r {
-    width: 12.5%;
+    width: 20%;
     height: auto;
-    transform: translate(4vw, -0.25vh);
+    transform: translate(1vw, -0.5vh);
 }
 
 #selection-arrow {
     width: 3vw;
     height: auto;
-    position: absolute;
+    position: relative;
     z-index: 2;
     display: flex;
-    transform: translateX(30vw);
+    transform: translateX(18vw);
     pointer-events: none;
 }
 
@@ -362,7 +368,7 @@ header {
     border: .25vw solid;
     border-radius: 1vw;
     background: transparent;
-    font-size: 2em;
+    font-size: 1.67em;
     font-weight: 700;
     font-style: italic;
     text-align: center;
@@ -394,7 +400,7 @@ header {
 #team2-select-highlight {
     overflow: visible;
     z-index: 0;
-    width: 45vw;
+    width: 90%;
     position: absolute;
 }
 
@@ -409,8 +415,8 @@ header {
 }
 
 .team-head {
-    margin-top: 3vh;
-    margin-bottom: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
     height: auto;
     align-items: center;
     flex-direction: column;
@@ -465,20 +471,20 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
 }
 
 .team-detail,
 .output-detail {
-    font-size: 1.33em;
+    font-size: 1.25em;
     font-weight: 600;
     font-style: italic;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-bottom: 1vh;
     border: 0.25vw solid;
     border-radius: 0.75vw;
-    width: 7vw;
-    height: 6vh;
+    width: 6vw;
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -523,14 +529,14 @@ h3 {
     overflow: visible;
     z-index: 0;
     position: absolute;
-    width: 10vw;
-    margin-top: 0.33vh;
+    width: 8vw;
+    margin-top: 0.25vh;
     margin-left: 0.5vw;
 }
 
 #team1-detail-cont span h3,
 #team2-detail-cont span h3 {
-    font-size: .85em;
+    font-size: .8em;
     text-align: center;
     z-index: 1;
     position: relative;
@@ -589,7 +595,7 @@ h3 {
 /* Headings within Spans */
 #output-detail-cont span h3,
 #pace-output-detail-cont span h3 {
-    font-size: .85em;
+    font-size: .8em;
     margin-top: 2vh;
     margin-bottom: .125vh;
     text-align: center;
@@ -741,7 +747,7 @@ h3 {
 
 /* Inputs & Selectors */
 .team-score {
-    width: 80%;
+    width: 90%;
     height: auto;
     padding: 1vh 0vh;
     border-width: .5vw;
@@ -777,6 +783,13 @@ h3 {
     }
 
     /* Main Content */
+
+    #selection-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0vw;
+        padding: 0vw 0vw;
+    }
 
     #team1-container,
     #team2-container, 
@@ -991,6 +1004,13 @@ h3 {
 
     /* Main Content */
 
+    #selection-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0vw;
+        padding: 0vw 0vw;
+    }
+
     #team1-container,
     #team2-container, 
     #time-remaining-container, 
@@ -1204,6 +1224,13 @@ h3 {
     }
 
     /* Main Content */
+
+    #selection-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0vw;
+        padding: 0vw 0vw;
+    }
 
     #team1-container,
     #team2-container, 

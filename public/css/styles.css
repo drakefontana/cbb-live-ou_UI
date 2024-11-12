@@ -1201,7 +1201,7 @@ h3 {
 
     .time-select {
         font-size: 2.75em;
-        padding: 2.5vh;
+        padding: 2vh;
     }
 
     #time-enclosure {
@@ -1882,7 +1882,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 5.5vh 0vw 4vh 0vw;
+        margin: 7vh 0vw 5vh 0vw;
     }
 
     #time-up,

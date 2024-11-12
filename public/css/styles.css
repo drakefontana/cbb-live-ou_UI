@@ -379,11 +379,11 @@ header {
 }
 
 #team1-select {
-    border-color: var(--team1-primary);
+    /*border-color: var(--team1-primary);*/
 }
 
 #team2-select {
-    border-color: var(--team2-primary);
+    /*border-color: var(--team2-primary);*/
 }
 
 .team1-select-high-fill {
@@ -400,7 +400,7 @@ header {
 #team2-select-highlight {
     overflow: visible;
     z-index: 0;
-    width: 90%;
+    width: 100%;
     position: absolute;
 }
 
@@ -732,7 +732,7 @@ h3 {
 
 #output-container,
 #pace-output-container {
-    width: 80vw;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -849,7 +849,7 @@ h3 {
 
     #team1-select-highlight,
     #team2-select-highlight {
-        width: 80vw;
+        width: 100%;
     }
 
     /* Headings */
@@ -1069,7 +1069,7 @@ h3 {
 
     #team1-select-highlight,
     #team2-select-highlight {
-        width: 75vw;
+        width: 100%;
     }
 
     /* Headings */
@@ -1290,7 +1290,7 @@ h3 {
 
     #team1-select-highlight,
     #team2-select-highlight {
-        width: 70vw;
+        width: 100%;
     }
 
     /* Headings */

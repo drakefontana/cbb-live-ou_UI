@@ -682,6 +682,18 @@ h3 {
     stroke-width: 0px;
 }
 
+#time-encl-indicator {
+    overflow: visible;
+    z-index: 1;
+    position: absolute;
+    width: 10vw;
+}
+
+#time-encl-indicator-shape {
+    fill: var(--black);
+    stroke-width: 0px;
+}
+
 #current-scores-container {
     width: 100%;
     display: flex;

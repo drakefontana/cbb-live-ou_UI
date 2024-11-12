@@ -1518,37 +1518,6 @@ h3 {
     }
 }
 
-/* Large Desktops */
-@media (min-width: 1441px) and (max-width: 2559px) {
-
-    /* Default Code */
-    #logo img {
-        width: 7vw;
-    }
-
-    #team-head-orna-1,
-    #team-head-orna-2 {
-        width: 5vw;
-        margin-top: -1.5vh;
-    }
-
-    #selection-arrow {
-        width: 4vw;
-        transform: translateX(28vw);
-    }
-
-    .team-select {
-        width: 80%;
-    }
-
-    #team1-detail-cont,
-    #team2-detail-cont,
-    #output-detail-cont,
-    #pace-output-detail-cont {
-        width: 67%;
-    }
-}
-
 /* Large Displays */
 @media (min-width: 2560px) {
 

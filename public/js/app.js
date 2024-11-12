@@ -113,6 +113,17 @@ function performCalculations() {
 
     // console.log(`Calculating with team1: ${team1Name}, team2: ${team2Name}, timeRemaining: ${timeRemaining}`);
 
+    // Calculate score differential
+    const scoreDifferential = Math.abs(currentScoreTeam1 - currentScoreTeam2);
+
+    // Display foul game indicator if time is 4 or less and score difference is 9 or less
+    const foulIndicator = document.getElementById('foul-game-indicator');
+    if (timeRemaining <= 4 && scoreDifferential <= 9) {
+        foulIndicator.style.display = 'block';
+    } else {
+        foulIndicator.style.display = 'none';
+    }
+
     // Calculate Adjusted Base PPG
     // Calculating Base PPG for team 1 against team 2 defense
     const basePtsGm1 = (parseFloat(team1Data.ptsGm) + parseFloat(team2Data.ptsOppGm)) / 2;

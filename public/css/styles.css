@@ -700,6 +700,7 @@ h3 {
     position: absolute;
     width: 10vw;
     transform: translate(0vw, -.5vh);
+    display: none; /* Initially hidden */
 }
 
 #foul-game-indicator-shape {

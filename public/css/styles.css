@@ -640,7 +640,7 @@ h3 {
     fill: var(--white);
     stroke-width: 0px;
     width: 1.5vw;
-    z-index: 1;
+    z-index: 5;
     margin: -1vh 0 -1vh 0;
 }
 
@@ -660,7 +660,7 @@ h3 {
     padding: 3vh;
     background: transparent;
     border: none;
-    z-index: 1;
+    z-index: 5;
     position: relative;
 }
 

@@ -254,6 +254,11 @@ header {
 }
 
 /* Team Select Containers */
+#selection-container {
+    display: flex;
+    width: 100%;
+}
+
 #team1-container,
 #team2-container {
     width: 67vw;

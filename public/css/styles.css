@@ -1445,7 +1445,7 @@ h3 {
     }
 
     #logo img {
-        width: 9vw;
+        width: 12vw;
     }
 
     /* Main Content */
@@ -1458,18 +1458,18 @@ h3 {
     }
 
     #time-remaining-container {
-        width: 80vw;
+        width: 100%;
         margin-bottom: 2vh;
     }
     
     #current-scores-container {
-        width: 80vw;
+        width: 100%;
         margin-bottom: 2vh;
     }
 
     #output-container,
     #pace-output-container {
-        width: 50%;
+        width: 60%;
         margin-bottom: 2vh;
     }
 
@@ -1482,14 +1482,14 @@ h3 {
     .team1-select-cont,
     .team2-select-cont {
         width: 100%;
-        margin-top: 6vh;
-        margin-bottom: 8vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
     }
 
     #team1-select-orna-l,
     #team2-select-orna-l {
-        width: 40%;
-        transform: translateX(-2vw);
+        width: 44%;
+        transform: translateX(-1.5vw);
     }
 
     #team1-select-orna-m,
@@ -1500,8 +1500,8 @@ h3 {
 
     #team1-select-orna-r,
     #team2-select-orna-r {
-        width: 20%;
-        transform: translate(1vw, -0.5vh);
+        width: 21%;
+        transform: translate(0vw, -0.25vh);
     }
 
     #selection-arrow {
@@ -1511,10 +1511,10 @@ h3 {
 
     .team-select {
         width: 100%;
-        height: 12vh;
+        height: 7vh;
         border: .25vw solid;
         border-radius: 1vw;
-        font-size: 1.67em;
+        font-size: 1em;
         padding: 1.5vh;
         margin-bottom: 0vh;
     }
@@ -1522,18 +1522,18 @@ h3 {
     /* Headings */
 
     .team-head {
-        margin-top: 1vh;
+        margin-top: 0vh;
         margin-bottom: 2vh;
     }
 
     #team-head-orna-1,
     #team-head-orna-2 {
-        width: 4vw;
-        margin-top: -1.5vh;
+        width: 5vw;
+        margin-top: -1.25vh;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 
     /* Stat Details */
@@ -1548,13 +1548,13 @@ h3 {
 
     .team-detail,
     .output-detail {
-        font-size: 1.25em;
+        font-size: .8em;
         margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin-bottom: 0vh;
         border: 0.25vw solid;
-        border-radius: 0.75vw;
+        border-radius: 1vw;
         width: 6vw;
-        height: 5vh;
+        height: 4vh;
     }
 
     #team1-highlight,
@@ -1566,7 +1566,7 @@ h3 {
 
     #team1-detail-cont span h3,
     #team2-detail-cont span h3 {
-        font-size: .8em;
+        font-size: .5em;
     }
 
     /* Span Styling */
@@ -1592,7 +1592,7 @@ h3 {
     /* Headings within Spans */
     #output-detail-cont span h3,
     #pace-output-detail-cont span h3 {
-        font-size: .8em;
+        font-size: .5em;
         margin-top: 2vh;
         margin-bottom: .125vh;
     }
@@ -1600,7 +1600,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 5vh 0vw;
+        margin: 3vh 0vw;
     }
 
     #time-up,
@@ -1610,16 +1610,16 @@ h3 {
     }
 
     .time-select {
-        font-size: 5em;
-        padding: 3.5vh;
+        font-size: 2.75em;
+        padding: 2.5vh;
     }
 
     #time-enclosure {
-        width: 12vw;
+        width: 13vw;
     }
 
     #scoreboard-display {
-        width: 67vw;
+        width: 75%;
     }
 
     #scoreboard-display span {
@@ -1629,17 +1629,17 @@ h3 {
 
     #team1-score-head,
     #team2-score-head {
-        font-size: 1.25em;
+        font-size: .8em;
     }
 
     /* Pace */
     #pace-description-container h3 {
-        font-size: 1.25em;
+        font-size: 1em;
     }
 
     #output-pace-flag {
-        padding-top: 3vh;
-        font-size: 1.125em;
+        padding-top: 2vh;
+        font-size: .85em;
     }
 
     #pace-output-detail-cont {
@@ -1652,7 +1652,7 @@ h3 {
         padding: 1vh 0vh;
         border-width: .5vw;
         border-radius: 1vw;
-        font-size: 3em;
+        font-size: 2em;
     }
 }
 
@@ -1665,7 +1665,7 @@ h3 {
     }
 
     #logo img {
-        width: 9vw;
+        width: 12vw;
     }
 
     /* Main Content */
@@ -1678,18 +1678,18 @@ h3 {
     }
 
     #time-remaining-container {
-        width: 80vw;
+        width: 100%;
         margin-bottom: 2vh;
     }
     
     #current-scores-container {
-        width: 80vw;
+        width: 100%;
         margin-bottom: 2vh;
     }
 
     #output-container,
     #pace-output-container {
-        width: 50%;
+        width: 60%;
         margin-bottom: 2vh;
     }
 
@@ -1702,14 +1702,14 @@ h3 {
     .team1-select-cont,
     .team2-select-cont {
         width: 100%;
-        margin-top: 6vh;
-        margin-bottom: 8vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
     }
 
     #team1-select-orna-l,
     #team2-select-orna-l {
-        width: 40%;
-        transform: translateX(-2vw);
+        width: 44%;
+        transform: translateX(-1.5vw);
     }
 
     #team1-select-orna-m,
@@ -1720,8 +1720,8 @@ h3 {
 
     #team1-select-orna-r,
     #team2-select-orna-r {
-        width: 20%;
-        transform: translate(1vw, -0.5vh);
+        width: 21%;
+        transform: translate(0vw, -0.25vh);
     }
 
     #selection-arrow {
@@ -1731,10 +1731,10 @@ h3 {
 
     .team-select {
         width: 100%;
-        height: 12vh;
+        height: 7vh;
         border: .25vw solid;
         border-radius: 1vw;
-        font-size: 1.67em;
+        font-size: 1em;
         padding: 1.5vh;
         margin-bottom: 0vh;
     }
@@ -1742,18 +1742,18 @@ h3 {
     /* Headings */
 
     .team-head {
-        margin-top: 1vh;
+        margin-top: 0vh;
         margin-bottom: 2vh;
     }
 
     #team-head-orna-1,
     #team-head-orna-2 {
-        width: 4vw;
-        margin-top: -1.5vh;
+        width: 5vw;
+        margin-top: -1.25vh;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 
     /* Stat Details */
@@ -1768,13 +1768,13 @@ h3 {
 
     .team-detail,
     .output-detail {
-        font-size: 1.25em;
+        font-size: .8em;
         margin-top: 1vh;
-        margin-bottom: 1vh;
+        margin-bottom: 0vh;
         border: 0.25vw solid;
-        border-radius: 0.75vw;
+        border-radius: 1vw;
         width: 6vw;
-        height: 5vh;
+        height: 4vh;
     }
 
     #team1-highlight,
@@ -1786,7 +1786,7 @@ h3 {
 
     #team1-detail-cont span h3,
     #team2-detail-cont span h3 {
-        font-size: .8em;
+        font-size: .5em;
     }
 
     /* Span Styling */
@@ -1812,7 +1812,7 @@ h3 {
     /* Headings within Spans */
     #output-detail-cont span h3,
     #pace-output-detail-cont span h3 {
-        font-size: .8em;
+        font-size: .5em;
         margin-top: 2vh;
         margin-bottom: .125vh;
     }
@@ -1820,7 +1820,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 5vh 0vw;
+        margin: 3vh 0vw;
     }
 
     #time-up,
@@ -1830,16 +1830,16 @@ h3 {
     }
 
     .time-select {
-        font-size: 5em;
-        padding: 3.5vh;
+        font-size: 2.75em;
+        padding: 2.5vh;
     }
 
     #time-enclosure {
-        width: 12vw;
+        width: 13vw;
     }
 
     #scoreboard-display {
-        width: 67vw;
+        width: 75%;
     }
 
     #scoreboard-display span {
@@ -1849,17 +1849,17 @@ h3 {
 
     #team1-score-head,
     #team2-score-head {
-        font-size: 1.25em;
+        font-size: .8em;
     }
 
     /* Pace */
     #pace-description-container h3 {
-        font-size: 1.25em;
+        font-size: 1em;
     }
 
     #output-pace-flag {
-        padding-top: 3vh;
-        font-size: 1.125em;
+        padding-top: 2vh;
+        font-size: .85em;
     }
 
     #pace-output-detail-cont {
@@ -1872,7 +1872,7 @@ h3 {
         padding: 1vh 0vh;
         border-width: .5vw;
         border-radius: 1vw;
-        font-size: 3em;
+        font-size: 2em;
     }
 }
 

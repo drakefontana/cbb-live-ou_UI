@@ -675,7 +675,7 @@ h3 {
     stroke-width: 0px;
     width: 1.5vw;
     z-index: 5;
-    margin: -1vh 0 -1vh 0;
+    margin: -1.25vh 0 -1.25vh 0;
 }
 
 .time-select {
@@ -763,8 +763,8 @@ h3 {
     overflow: visible;
     z-index: 2;
     position: absolute;
-    width: 10vw;
-    transform: translate(0vw, -.5vh);
+    width: 9.25vw;
+    transform: translate(0vw, -.95vh);
     display: none;
     /* Initially hidden */
 }
@@ -1091,8 +1091,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 31vw;
-        transform: translate(0vw, -.5vh);
+        width: 29.5vw;
+        transform: translate(0vw, -.75vh);
     }
 
     #scoreboard-display {
@@ -1308,7 +1308,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 5vh 0vw 4vh 0vw;
+        margin: 5.5vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -1336,8 +1336,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 26vw;
-        transform: translate(0vw, -.5vh);
+        width: 24.5vw;
+        transform: translate(0vw, -.75vh);
     }
 
     #scoreboard-display {
@@ -1553,7 +1553,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 8vh 0vw 6vh 0vw;
+        margin: 8.5vh 0vw 6vh 0vw;
     }
 
     #time-up,
@@ -1568,7 +1568,7 @@ h3 {
     }
 
     #time-enclosure {
-        width: 24vw;
+        width: 23vw;
     }
 
     #time-encl-indicator {
@@ -1581,8 +1581,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 24vw;
-        transform: translate(0vw, -.5vh);
+        width: 22.5vw;
+        transform: translate(0vw, -1vh);
     }
 
     #scoreboard-display {
@@ -1799,7 +1799,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 6vh 0vw 4vh 0vw;
+        margin: 6.5vh 0vw 4vh 0vw;
     }
 
     #time-up,
@@ -1814,7 +1814,7 @@ h3 {
     }
 
     #time-enclosure {
-        width: 13vw;
+        width: 12vw;
     }
 
     #time-encl-indicator {
@@ -1827,8 +1827,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 13vw;
-        transform: translate(0vw, -.5vh);
+        width: 12vw;
+        transform: translate(0vw, -.75vh);
     }
 
     #scoreboard-display {
@@ -2042,7 +2042,7 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 7vh 0vw 5vh 0vw;
+        margin: 8vh 0vw 5vh 0vw;
     }
 
     #time-up,
@@ -2057,7 +2057,7 @@ h3 {
     }
 
     #time-enclosure {
-        width: 10vw;
+        width: 9vw;
     }
 
     #time-encl-indicator {
@@ -2070,8 +2070,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 10vw;
-        transform: translate(0vw, -.5vh);
+        width: 9.5vw;
+        transform: translate(0vw, -.85vh);
     }
 
     #scoreboard-display {
@@ -2300,7 +2300,7 @@ h3 {
     }
 
     #time-enclosure {
-        width: 10vw;
+        width: 9vw;
     }
 
     #time-encl-indicator {
@@ -2313,8 +2313,8 @@ h3 {
     }
 
     #halftime-indicator {
-        width: 10vw;
-        transform: translate(0vw, -.5vh);
+        width: 9.5vw;
+        transform: translate(0vw, -.85vh);
     }
 
     #scoreboard-display {

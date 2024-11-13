@@ -123,11 +123,13 @@ function performCalculations() {
     // Logic for foul game indicator
     if (timeRemaining <= 4 && scoreDifferential <= 9) {
         foulIndicator.style.display = 'block';
+        halftimeIndicator.style.display = 'none';
         // Change fill color to alert red for foul game
         timeEnclIndicatorShape.style.fill = 'var(--alert-red)';
     } else if (timeRemaining === 20) {
         // Logic for halftime indicator
         halftimeIndicator.style.display = 'block';
+        foulIndicator.style.display = 'none';
         // Change fill color to halftime color
         timeEnclIndicatorShape.style.fill = 'var(--halftime)';
     } else {

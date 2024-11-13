@@ -772,13 +772,21 @@ h3 {
 }
 
 /* Inputs & Selectors */
+
+#score-input-team1, 
+#score-input-team2 {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .team-score {
-    -webkit-appearance: none;
-    /* For WebKit browsers */
-    -moz-appearance: none;
-    /* For Mozilla browsers */
-    appearance: none;
-    /* Standard */
+    appearance: none; /* Standard */
+    outline: none; /* Remove the outline on focus */
     color: var(--white);
     font-family: 'Technology';
     font-size: 2.75em;
@@ -794,11 +802,16 @@ h3 {
     height: auto;
 }
 
-#score-input-team1, 
-#score-input-team2 {
-    width: 90%;
-    height: auto;
-    display: flex;
+/* Hide the spin buttons in WebKit browsers (Chrome, Safari, Edge) */
+.team-score::-webkit-outer-spin-button,
+.team-score::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the spin buttons in Firefox */
+.team-score[type=number] {
+    -moz-appearance: textfield;
 }
 
 #team-score-enclosure-1 {
@@ -813,8 +826,8 @@ h3 {
 #team-score-enclosure-2 {
     width: 100%;
     height: auto;
-    z-index: 1;
-    position: relative;
+    z-index: 0;
+    position: absolute;
 }
 
 /* Mobile Devices (Small Screens) */

@@ -380,15 +380,17 @@ header {
 }
 
 /* Styling the dropdown options */
-#team1-select option,
-#team2-select option {
+.team-select option {
     background-color: var(--black);
     color: var(--white);
-    font-size: 1.25em;
-    font-weight: 700;
-    font-style: italic;
-    text-align: center;
+    text-align: left;
     border: none;
+    padding: 2vw 4vw;
+}
+
+/* Remove scrollbar */
+.team-select::-webkit-scrollbar {
+    display: none;
 }
 
 /* Style the selected option */
@@ -402,25 +404,29 @@ header {
     color: var(--white); /* Text color for selected option */
 }
 
+/* Entry animation */
+.team-select:focus {
+    animation: dropdown-fade-in 0.3s ease-out forwards;
+}
+
+@keyframes dropdown-fade-in {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 #team1-select {
     /*border-color: var(--team1-primary);*/
-    overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 #team2-select {
     /*border-color: var(--team2-primary);*/
-    overflow-y: hidden; /* Hide vertical scrollbar */
 }
-
-#team1-select,
-#team2-select {
-    width: 100%;
-    max-width: 15vw; /* Adjust width as needed */
-    max-height: 25vh; /* Control dropdown height */
-    padding: 1vw;
-    border-radius: 0 0 12px 0; /* Rounded corners */
-}
-
 
 .team1-select-high-fill {
     fill: var(--team1-primary);

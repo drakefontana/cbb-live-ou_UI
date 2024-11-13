@@ -652,7 +652,7 @@ h3 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 8vh 0vw 6vh 0vw;
+    margin: 8.5vh 0vw 6vh 0vw;
 }
 
 .progress-ring {
@@ -724,7 +724,7 @@ h3 {
     overflow: visible;
     z-index: 0;
     position: absolute;
-    width: 10vw;
+    width: 9vw;
 }
 
 #time-enclosure-shape {
@@ -1553,13 +1553,13 @@ h3 {
     /* Time Remaining & Scoreboard */
 
     .progress-ring-container {
-        margin: 8.5vh 0vw 6vh 0vw;
+        margin: 9.5vh 0vw 7vh 0vw;
     }
 
     #time-up,
     #time-down {
         width: 4vw;
-        margin: -.5vh 0 -.5vh 0;
+        margin: -1.5vh 0 -1.5vh 0;
     }
 
     .time-select {
@@ -1572,16 +1572,16 @@ h3 {
     }
 
     #time-encl-indicator {
-        width: 31vw;
+        width: 30vw;
     }
 
     #foul-game-indicator {
-        width: 24vw;
+        width: 23vw;
         transform: translate(0vw, -.5vh);
     }
 
     #halftime-indicator {
-        width: 22.5vw;
+        width: 22vw;
         transform: translate(0vw, -1vh);
     }
 
@@ -2048,7 +2048,7 @@ h3 {
     #time-up,
     #time-down {
         width: 1.5vw;
-        margin: -1vh 0 -1vh 0;
+        margin: -1.5vh 0 -1.5vh 0;
     }
 
     .time-select {
@@ -2057,7 +2057,7 @@ h3 {
     }
 
     #time-enclosure {
-        width: 9vw;
+        width: 9.5vw;
     }
 
     #time-encl-indicator {

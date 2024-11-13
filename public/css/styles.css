@@ -364,6 +364,7 @@ header {
     /* For Mozilla browsers */
     appearance: none;
     /* Standard */
+    outline: none;
     color: var(--white);
     border: .25vw solid;
     border-radius: 1vw;
@@ -378,13 +379,48 @@ header {
     position: absolute;
 }
 
+/* Styling the dropdown options */
+#team1-select option,
+#team2-select option {
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.25em;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    border: none;
+}
+
+/* Style the selected option */
+#team1-select:focus option:checked {
+    background-color: var(--team1-primary); /* Custom highlight color */
+    color: var(--white); /* Text color for selected option */
+}
+
+#team2-select:focus option:checked {
+    background-color: var(--team2-primary); /* Custom highlight color */
+    color: var(--white); /* Text color for selected option */
+}
+
 #team1-select {
     /*border-color: var(--team1-primary);*/
+    overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 #team2-select {
     /*border-color: var(--team2-primary);*/
+    overflow-y: hidden; /* Hide vertical scrollbar */
 }
+
+#team1-select,
+#team2-select {
+    width: 100%;
+    max-width: 15vw; /* Adjust width as needed */
+    max-height: 25vh; /* Control dropdown height */
+    padding: 1vw;
+    border-radius: 0 0 12px 0; /* Rounded corners */
+}
+
 
 .team1-select-high-fill {
     fill: var(--team1-primary);
@@ -651,6 +687,7 @@ h3 {
     /* For Mozilla browsers */
     appearance: none;
     /* Standard */
+    outline: none;
     color: var(--white);
     font-family: 'Technology';
     font-size: 4em;
@@ -833,6 +870,8 @@ h3 {
     z-index: 0;
     position: absolute;
 }
+
+/* ####### RESPONSIVE VIEWPORTS ####### */
 
 /* Mobile Devices (Small Screens) */
 @media (max-width: 320px) {
@@ -1063,7 +1102,7 @@ h3 {
     }
 
     .team-score {
-        font-size: 2em;
+        font-size: 1.75em;
         padding: 1vh 0vh;
     }
 
@@ -1303,8 +1342,8 @@ h3 {
     }
 
     .team-score {
-        font-size: 2em;
-        padding: 1.125vh 0vh;
+        font-size: 1.85em;
+        padding: 1.1vh 0vh;
     }
 
     #team-score-enclosure-1,
@@ -1781,7 +1820,7 @@ h3 {
     }
 
     .team-score {
-        font-size: 2em;
+        font-size: 1.75em;
         padding: 1vh 0vh;
     }
 

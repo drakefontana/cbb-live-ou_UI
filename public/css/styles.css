@@ -773,28 +773,48 @@ h3 {
 
 /* Inputs & Selectors */
 .team-score {
-    width: 90%;
-    height: auto;
-    padding: 1.5vh 0vh;
-    border-width: .5vw;
-    border-radius: 1.25vw;
+    -webkit-appearance: none;
+    /* For WebKit browsers */
+    -moz-appearance: none;
+    /* For Mozilla browsers */
+    appearance: none;
+    /* Standard */
     color: var(--white);
-    background-color: var(--black);
     font-family: 'Technology';
     font-size: 2.75em;
     font-weight: normal;
     font-style: italic;
     text-align: center;
+    padding: 1.5vh 0vh;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
-#current-score-team1 {
-    border-color: var(--team1-primary);
-    border-style: double;
+#score-input-team1, 
+#score-input-team2 {
+    width: 90%;
+    height: auto;
+    display: flex;
 }
 
-#current-score-team2 {
-    border-color: var(--team2-primary);
-    border-style: double;
+#team-score-enclosure-1 {
+    fill: var(--team1-primary);
+}
+
+#team-score-enclosure-2 {
+    fill: var(--team2-primary);
+}
+
+#team-score-enclosure-1, 
+#team-score-enclosure-2 {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    position: relative;
 }
 
 /* Mobile Devices (Small Screens) */

@@ -698,10 +698,25 @@ h3 {
     position: relative;
 }
 
+/* Styling the dropdown options */
 .time-select option {
     font-family: 'Technology';
     font-weight: bold;
     font-style: italic;
+    background-color: var(--black);
+    border: none;
+}
+
+/* Remove scrollbar */
+.time-select::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style the selected option */
+.time-select option:hover, 
+.time-select option:focus {
+    background-color: var(--white);
+    color: var(--black);
 }
 
 #time-enclosure {

@@ -385,6 +385,7 @@ header {
 .team-select option {
     background-color: var(--black);
     color: var(--white);
+    font-weight: 700;
     border: none;
 }
 
@@ -394,7 +395,8 @@ header {
 }
 
 /* Style the selected option */
-.team-select option:hover {
+.team-select option:hover, 
+.team-select option:focus {
     background-color: var(--white);
     color: var(--black);
 }

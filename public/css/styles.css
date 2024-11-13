@@ -3,6 +3,7 @@
     --black: #131314;
     --white: #F4F6F3;
     --alert-red: #EF182B;
+    --halftime: #EE6300;
     /* New Team Color Variables (placeholders) */
     --team1-primary: #131314;
     /* Example default color */
@@ -758,6 +759,21 @@ h3 {
     stroke-width: 0px;
 }
 
+#halftime-indicator {
+    overflow: visible;
+    z-index: 2;
+    position: absolute;
+    width: 10vw;
+    transform: translate(0vw, -.5vh);
+    display: none;
+    /* Initially hidden */
+}
+
+#halftime-indicator-shape {
+    fill: var(--halftime);
+    stroke-width: 0px;
+}
+
 #current-scores-container {
     width: 100%;
     display: flex;
@@ -1074,6 +1090,11 @@ h3 {
         transform: translate(0vw, -.5vh);
     }
 
+    #halftime-indicator {
+        width: 31vw;
+        transform: translate(0vw, -.5vh);
+    }
+
     #scoreboard-display {
         width: 85vw;
         display: flex;
@@ -1314,6 +1335,11 @@ h3 {
         transform: translate(0vw, -.5vh);
     }
 
+    #halftime-indicator {
+        width: 26vw;
+        transform: translate(0vw, -.5vh);
+    }
+
     #scoreboard-display {
         width: 80vw;
         display: flex;
@@ -1550,6 +1576,11 @@ h3 {
     }
 
     #foul-game-indicator {
+        width: 24vw;
+        transform: translate(0vw, -.5vh);
+    }
+
+    #halftime-indicator {
         width: 24vw;
         transform: translate(0vw, -.5vh);
     }
@@ -1795,6 +1826,11 @@ h3 {
         transform: translate(0vw, -.5vh);
     }
 
+    #halftime-indicator {
+        width: 13vw;
+        transform: translate(0vw, -.5vh);
+    }
+
     #scoreboard-display {
         width: 75%;
     }
@@ -2033,6 +2069,11 @@ h3 {
         transform: translate(0vw, -.5vh);
     }
 
+    #halftime-indicator {
+        width: 10vw;
+        transform: translate(0vw, -.5vh);
+    }
+
     #scoreboard-display {
         width: 67%;
     }
@@ -2267,6 +2308,11 @@ h3 {
     }
 
     #foul-game-indicator {
+        width: 10vw;
+        transform: translate(0vw, -.5vh);
+    }
+
+    #halftime-indicator {
         width: 10vw;
         transform: translate(0vw, -.5vh);
     }

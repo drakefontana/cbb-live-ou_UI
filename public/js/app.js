@@ -49,7 +49,7 @@ function populateTimeRemainingDropdown() {
     }
 
     // Event listener to change selected value color
-    timeRemainingSelect.addEventListener('change', function() {
+    timeRemainingSelect.addEventListener('change', function () {
         if (this.value >= 1 && this.value <= 4) {
             this.style.color = "var(--alert-red)";
         } else {
@@ -63,7 +63,7 @@ function setDefaultDropdownValues() {
     document.getElementById('team1-select').value = 'Colorado St';
     document.getElementById('team2-select').value = 'Colorado';
     document.getElementById('time-remaining-select').value = 20;
-    
+
     // Trigger updates based on default selections
     updateStaticAndOutputValues();
 }
@@ -72,11 +72,11 @@ function updateStaticAndOutputValues() {
     // Assuming 'team1-select' and 'team2-select' are your dropdowns for team selection
     const team1Name = document.getElementById('team1-select').value;
     const team2Name = document.getElementById('team2-select').value;
-    
+
     // Fetch static data for the selected teams
     const team1StaticData = baseData.find(team => team.team === team1Name);
     const team2StaticData = baseData.find(team => team.team === team2Name);
-    
+
     // console.log('Received data from server:', baseData);
 
     // Update the UI with static data
@@ -87,7 +87,7 @@ function updateStaticAndOutputValues() {
     // console.log('Found Team 1 Data:', team1StaticData);
     // console.log('Selected Team 2:', team2Name);
     // console.log('Found Team 2 Data:', team2StaticData);
-    
+
     // Update score headers with team names
     document.getElementById('team1-score-head').textContent = team1Name;
     document.getElementById('team2-score-head').textContent = team2Name;
@@ -117,16 +117,24 @@ function performCalculations() {
     const scoreDifferential = Math.abs(currentScoreTeam1 - currentScoreTeam2);
 
     const foulIndicator = document.getElementById('foul-game-indicator');
+    const halftimeIndicator = document.getElementById('halftime-indicator');
     const timeEnclIndicatorShape = document.querySelector('#time-encl-indicator-shape');
 
-    // Display foul game indicator if time is 4 or less and score difference is 9 or less
+    // Logic for foul game indicator
     if (timeRemaining <= 4 && scoreDifferential <= 9) {
         foulIndicator.style.display = 'block';
-        // Change fill color to alert red
+        // Change fill color to alert red for foul game
         timeEnclIndicatorShape.style.fill = 'var(--alert-red)';
+    } else if (timeRemaining === 20) {
+        // Logic for halftime indicator
+        halftimeIndicator.style.display = 'block';
+        // Change fill color to halftime color
+        timeEnclIndicatorShape.style.fill = 'var(--halftime)';
     } else {
+        // Reset indicators when conditions are not met
         foulIndicator.style.display = 'none';
-        // Revert fill color to default
+        halftimeIndicator.style.display = 'none';
+        // Revert fill color to default black
         timeEnclIndicatorShape.style.fill = 'var(--black)';
     }
 
@@ -143,11 +151,11 @@ function performCalculations() {
 
     // Dynamically calculating rank adjustments based on offensive and defensive strengths
     const rankAdjustment1 = (team1Data.offRank < team2Data.defRank) ?
-        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125:
+        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125 :
         1 - ((team1Data.offRank - team2Data.defRank) / 362) * 0.125;
 
     const rankAdjustment2 = (team2Data.offRank < team1Data.defRank) ?
-        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125:
+        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125 :
         1 - ((team2Data.offRank - team1Data.defRank) / 362) * 0.125;
 
     const adjustedPtsPoss1 = ptsPoss1 * rankAdjustment1;
@@ -159,11 +167,11 @@ function performCalculations() {
     // Calculate game total xPoss
     // Calculate pace adjustment factors based on offensive and defensive strengths
     const paceAdjustmentFactor1 = (team1Data.offRank < team2Data.defRank) ?
-        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125:
+        1 + ((team2Data.defRank - team1Data.offRank) / 362) * 0.125 :
         1 - ((team1Data.offRank - team2Data.defRank) / 362) * 0.125;
 
     const paceAdjustmentFactor2 = (team2Data.offRank < team1Data.defRank) ?
-        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125:
+        1 + ((team1Data.defRank - team2Data.offRank) / 362) * 0.125 :
         1 - ((team2Data.offRank - team1Data.defRank) / 362) * 0.125;
 
     const gmTotalxPoss = (parseFloat(team1Data.possGm) * paceAdjustmentFactor1) + (parseFloat(team2Data.possGm) * paceAdjustmentFactor2);
@@ -193,7 +201,7 @@ function performCalculations() {
     const timePlayed = 40 - timeRemaining; // Assuming a standard game length of 40 minutes
     const pacePtsMin = currentTotalScore / timePlayed; // Points per minute played
     const paceAdjGmTotalxPts = pacePtsMin * 40; // Projected total score at current pace
-    const paceAdjxPtsRemaining = pacePtsMin * timeRemaining; 
+    const paceAdjxPtsRemaining = pacePtsMin * timeRemaining;
 
     let paceFlag = "On Pace";
     if (paceAdjGmTotalxPts < gmTotalxPts * 0.94) paceFlag = "Very Slow";

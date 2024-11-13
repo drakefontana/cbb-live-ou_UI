@@ -618,7 +618,7 @@ h3 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 5.5vh 0vw 5vh 0vw;
+    margin: 8vh 0vw 6vh 0vw;
 }
 
 .progress-ring {
@@ -700,7 +700,8 @@ h3 {
     position: absolute;
     width: 10vw;
     transform: translate(0vw, -.5vh);
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
 }
 
 #foul-game-indicator-shape {
@@ -773,7 +774,7 @@ h3 {
 
 /* Inputs & Selectors */
 
-#score-input-team1, 
+#score-input-team1,
 #score-input-team2 {
     width: 90%;
     height: auto;
@@ -782,11 +783,14 @@ h3 {
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin: 2vh 0vw 1vh 0vw;
 }
 
 .team-score {
-    appearance: none; /* Standard */
-    outline: none; /* Remove the outline on focus */
+    appearance: none;
+    /* Standard */
+    outline: none;
+    /* Remove the outline on focus */
     color: var(--white);
     font-family: 'Technology';
     font-size: 2.75em;
@@ -822,7 +826,7 @@ h3 {
     fill: var(--team2-primary);
 }
 
-#team-score-enclosure-1, 
+#team-score-enclosure-1,
 #team-score-enclosure-2 {
     width: 100%;
     height: auto;
@@ -1051,12 +1055,21 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 80%;
-        padding: 1vh 0vh;
-        border-width: 2vw;
-        border-radius: 3vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 2em;
+        padding: 1vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }
 
@@ -1282,12 +1295,21 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 75%;
-        padding: 1.125vh 0vh;
-        border-width: 1.5vw;
-        border-radius: 4vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 2em;
+        padding: 1.125vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }
 
@@ -1513,12 +1535,21 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 67%;
-        padding: 1.25vh 0vh;
-        border-width: 1.25vw;
-        border-radius: 3vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 2.25em;
+        padding: 1.25vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }
 
@@ -1547,7 +1578,7 @@ h3 {
         width: 100%;
         margin-bottom: 2vh;
     }
-    
+
     #current-scores-container {
         width: 100%;
         margin-bottom: 2vh;
@@ -1742,12 +1773,21 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 90%;
-        padding: 1vh 0vh;
-        border-width: .5vw;
-        border-radius: 1vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 2em;
+        padding: 1vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }
 
@@ -1776,7 +1816,7 @@ h3 {
         width: 100%;
         margin-bottom: 2vh;
     }
-    
+
     #current-scores-container {
         width: 100%;
         margin-bottom: 2vh;
@@ -1971,12 +2011,21 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 90%;
-        padding: 1.25vh 0vh;
-        border-width: .5vw;
-        border-radius: 1.25vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 2em;
+        padding: 1.25vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }
 
@@ -2005,7 +2054,7 @@ h3 {
         width: 100%;
         margin-bottom: 2vh;
     }
-    
+
     #current-scores-container {
         width: 100%;
         margin-bottom: 2vh;
@@ -2200,11 +2249,20 @@ h3 {
     }
 
     /* Inputs & Selectors */
-    .team-score {
+
+    #score-input-team1,
+    #score-input-team2 {
         width: 90%;
-        padding: 1.75vh 0vh;
-        border-width: .5vw;
-        border-radius: 1.25vw;
+        margin: 2vh 0vw 1vh 0vw;
+    }
+
+    .team-score {
         font-size: 3.5em;
+        padding: 1.75vh 0vh;
+    }
+
+    #team-score-enclosure-1,
+    #team-score-enclosure-2 {
+        width: 100%;
     }
 }

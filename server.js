@@ -58,7 +58,7 @@ app.get('/api/baseData', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
     // Adjust the range to include all teams and relevant columns
-    const range = 'Calc!A2:AW363'; // Example range, adjust according to your sheet
+    const range = 'Calc!A2:AW365'; // Example range, adjust according to your sheet
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });

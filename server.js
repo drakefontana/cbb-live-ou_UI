@@ -41,7 +41,7 @@ async function getGoogleSheetsClient() {
 app.get('/api/teams', async (req, res) => {
     const googleSheets = await getGoogleSheetsClient();
     const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Calc!B2:B363'; // Assuming teams are listed in these cells
+    const range = 'Calc!B2:B365'; // Assuming teams are listed in these cells
 
     try {
         const response = await googleSheets.spreadsheets.values.get({ spreadsheetId, range });

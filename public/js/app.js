@@ -61,7 +61,7 @@ function populateTimeRemainingDropdown() {
 // Function to set default dropdown values and trigger static data update
 function setDefaultDropdownValues() {
     document.getElementById('team1-select').value = 'Colorado St';
-    document.getElementById('team2-select').value = 'Colorado';
+    document.getElementById('team2-select').value = 'Memphis';
     document.getElementById('time-remaining-select').value = 20;
 
     // Trigger updates based on default selections
